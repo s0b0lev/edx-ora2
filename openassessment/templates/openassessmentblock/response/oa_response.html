@@ -66,12 +66,39 @@
                                     <textarea
                                         id="submission__answer__part__text__{{ forloop.counter }}"
                                         class="submission__answer__part__text__value"
+                                        data-preview="submission"
+                                        aria-labelledby="submission__answer__part__text__title__{{ forloop.counter }}__{{ xblock_id }}"
+                                        aria-describedby="submission__answer__tip__{{ xblock_id }}"
                                         placeholder="{% trans "Enter your response to the question above." %}"
                                         maxlength="100000"
                                     >{{ part.text }}</textarea>
                                 </div>
                             </li>
                         {% endfor %}
+                        {% if text_response %}
+                        <li class="field">
+                            <div class="response__submission__actions">
+                                <div class="message message--inline message--error message--error-server" tabindex="-1">
+                                    <h5 class="message__title">{% trans "We could not save your progress" %}</h5>
+                                    <div class="message__content"></div>
+                                </div>
+
+                                <ul class="list list--actions">
+                                    <li class="list--actions__item">
+                                        <button type="submit" class="action action--save submission__save" aria-describedby="response__save_status__{{ xblock_id }}" disabled>
+                                            {% trans "Save your progress" %}
+                                        </button>
+
+                                        <div id="response__save_status__{{ xblock_id }}" class="save__submission__label response__submission__label">
+                                            <span class="sr">{% trans "Your Submission Status" %}:</span>
+                                            {{ save_status }}
+                                        </div>
+                                    </li>
+                                    {% include "openassessmentblock/oa_latex_preview.html" with id="submission__"|add:xblock_id elem="li" preview_name="submission" %}
+                                </ul>
+                            </div>
+                        </li>
+                        {% endif %}
                         {% if file_upload_type %}
                         <li class="field">
                             <div id="upload__error">

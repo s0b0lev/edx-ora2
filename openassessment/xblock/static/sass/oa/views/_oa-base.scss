@@ -548,7 +548,7 @@
     }
 
     .response__submission__actions {
-
+      @extend %action-items;
       .action--save {
         @extend %btn--secondary;
         @extend %action-2;
@@ -623,6 +623,7 @@
 
     // assessment form
     .peer-assessment__assessment {
+      @extend %action-items;
 
       // fields
       .assessment__fields {
@@ -690,6 +691,7 @@
 
     // assessment form
     .self-assessment__assessment {
+      @extend %action-items;
 
       // fields
       .assessment__fields {
@@ -827,7 +829,6 @@
     @extend %ui-subsection-content;
 
     padding: ($baseline-v/2) ($baseline-h/4) $baseline-v ($baseline-h/4);
-    background: $color-decorative-quaternary;
     border-radius: ($baseline-v/10);
     list-style: none;
 
@@ -1027,6 +1028,11 @@
 
     .answer--feedback__content {
       margin-top: ($baseline-v/4);
+    }
+
+    .action--save {
+      @extend %btn--secondary;
+      @extend %action-2;
     }
 
     .feedback {
