@@ -110,7 +110,6 @@ class BaseBackend(object):
             raise FileUploadRequestError("Key required for URL request")
         return Settings.get_bucket_name(), self._get_key_name(key)
 
-
     def _get_key_name(self, key):
         """Construct a key name with the given string and configured prefix.
 
@@ -127,4 +126,3 @@ class BaseBackend(object):
             prefix=Settings.get_prefix(),
             key=key
         )
-
