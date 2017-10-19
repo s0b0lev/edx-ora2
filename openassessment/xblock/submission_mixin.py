@@ -411,6 +411,7 @@ class SubmissionMixin(object):
                         description = descriptions[idx]
                     except IndexError:
                         pass
+                    description = description.strip()
                     urls.append((url, description))
                 else:
                     break
