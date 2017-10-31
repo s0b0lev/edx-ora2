@@ -526,6 +526,7 @@ class SubmissionMixin(object):
                 if file_url:
                     try:
                         file_description = saved_files_descriptions[i]
+                        file_description = file_description.strip()
                     except IndexError:
                         pass
                     file_urls.append((file_url, file_description))
