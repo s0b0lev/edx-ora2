@@ -801,6 +801,10 @@ OpenAssessment.ResponseView.prototype = {
             var div1 = null;
             var div2 = null;
             var ariaLabelledBy = null;
+            var fileDescription = $.trim(view.filesDescriptions[filenum]);
+            if (!fileDescription) {
+                fileDescription = '#' + (filenum + 1);
+            }
 
             if (!fileBlockExists) {
                 fileBlock = $('<div/>');
@@ -815,7 +819,7 @@ OpenAssessment.ResponseView.prototype = {
                     id: ariaLabelledBy
                 });
                 div1.addClass('submission__file__description__label');
-                div1.text(view.filesDescriptions[filenum] + ':');
+                div1.text(fileDescription + ':');
                 div1.appendTo(fileBlock);
 
                 img = $('<img />');
@@ -829,7 +833,7 @@ OpenAssessment.ResponseView.prototype = {
             } else {
                 file = $('<a />', {
                     href: url,
-                    text: view.filesDescriptions[filenum]
+                    text: fileDescription
                 });
                 file.addClass('submission__answer__file submission--file');
                 file.attr('target', '_blank');
