@@ -59,6 +59,22 @@ def submitter_is_finished(submission_uuid, peer_requirements):
         raise PeerAssessmentRequestError(u'Requirements dict must contain "must_grade" key')
 
 
+def get_graded_by_count(submission_uuid):
+    """
+    Retrieve the number of peer assessments the submitter has received.
+    Returns None if no submission with this ID.
+    """
+    workflow = PeerWorkflow.get_by_submission_uuid(submission_uuid)
+    if workflow is None:
+        return None
+
+    scored_items = workflow.graded_by.filter(
+        assessment__submission_uuid=submission_uuid,
+        assessment__score_type=PEER_TYPE
+    )
+    return scored_items.count()
+
+
 def assessment_is_finished(submission_uuid, peer_requirements):
     """
     Check whether the submitter has received enough assessments
@@ -81,15 +97,11 @@ def assessment_is_finished(submission_uuid, peer_requirements):
     if not peer_requirements:
         return False
 
-    workflow = PeerWorkflow.get_by_submission_uuid(submission_uuid)
-    if workflow is None:
+    count = get_graded_by_count(submission_uuid)
+    if count is None:
         return False
 
-    scored_items = workflow.graded_by.filter(
-        assessment__submission_uuid=submission_uuid,
-        assessment__score_type=PEER_TYPE
-    )
-    return scored_items.count() >= peer_requirements["must_be_graded_by"]
+    return count >= peer_requirements["must_be_graded_by"]
 
 
 def on_start(submission_uuid):
