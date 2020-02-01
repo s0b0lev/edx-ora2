@@ -482,7 +482,8 @@ class SubmissionMixin:
         """
         return file_upload_api.get_student_file_key(self.get_student_item_dict(), index=num)
 
-    def _get_url_by_file_key(self, key):
+    @classmethod
+    def _get_url_by_file_key(cls, key):
         """
         Return download url for some particular file key.
 
@@ -499,7 +500,8 @@ class SubmissionMixin:
 
         return url
 
-    def get_download_urls_from_submission(self, submission):
+    @classmethod
+    def get_download_urls_from_submission(cls, submission):
         """
         Returns a download URLs for retrieving content within a submission.
 
@@ -520,7 +522,7 @@ class SubmissionMixin:
             descriptions = submission['answer'].get('files_descriptions', [])
             file_names = submission['answer'].get('files_name', submission['answer'].get('files_names', []))
             for idx, key in enumerate(file_keys):
-                file_download_url = self._get_url_by_file_key(key)
+                file_download_url = cls._get_url_by_file_key(key)
                 if file_download_url:
                     file_description = descriptions[idx].strip() if idx < len(descriptions) else ''
                     try:
@@ -531,7 +533,7 @@ class SubmissionMixin:
                     urls.append((file_download_url, file_description, file_name, False))
         elif 'file_key' in submission['answer']:
             key = submission['answer'].get('file_key', '')
-            file_download_url = self._get_url_by_file_key(key)
+            file_download_url = cls._get_url_by_file_key(key)
             if file_download_url:
                 urls.append((file_download_url, '', '', False))
         return urls
