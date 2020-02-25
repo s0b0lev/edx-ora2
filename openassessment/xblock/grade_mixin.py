@@ -3,6 +3,7 @@ Grade step in the OpenAssessment XBlock.
 """
 from __future__ import absolute_import
 
+from collections import OrderedDict
 import copy
 
 from django.utils.translation import ugettext as _
@@ -584,3 +585,63 @@ class GradeMixin(object):
                     part['option']['label'] = option_labels.get(option_label_key, part['option']['name'])
 
         return assessment
+
+    def generate_report_data(self, user_state_iterator, limit_responses=None):
+        """
+        Return a list of student responses and assessments for this block in a readable way.
+
+        Arguments:
+            user_state_iterator: iterator over UserStateClient objects.
+                E.g. the result of user_state_client.iter_all_for_block(block_key)
+            limit_responses (int|None): maximum number of responses to include.
+                Set to None (default) to include all.
+        Returns:
+            each call returns a tuple like:
+                ("my_username", {
+                    'Submission ID': 'c6551...',
+                    'Item ID': 5,
+                    'Anonymized Student ID': 'c801..',
+                    'Assessment ID': 4,
+                    'Assessment Scored Date': '2020-02-01',
+                    'Assessment Scored Time': '10:03:07.218280+00:00',
+                    'Assessment Type': 'PE',
+                    'Anonymous Scorer Id': '6e9a...',
+                    'criterion_1: Ideas": 'Poor',
+                    'points_1': 0,
+                    'median_points_1': 0,
+                    'feedback_1': 'Does not answer the question.',
+                    'criterion_2: Content": 'Excellent',
+                    'points_2': 3,
+                    'median_points_2': 3.0,
+                    'feedback_2': 'Well described.',
+                    'Overall Feedback': 'try again',
+                    'Date/Time Final Score Given': 2020-02-01 10:03:07.218280+00:00',,
+                    'Final Score Points Earned': 1,
+                    'Final Score Points Possible': 5,
+                    'Feedback Statements Selected': "",
+                    'Feedback on Assessment': "",
+                    'Response files': 'http://lms.url/...',
+                    'Response': '{"file_descriptions"...}',
+                    'Assessment scored At': 2020-02-01 10:03:07.218280+00:00',,
+                })
+        """
+        from openassessment.data import OraAggregateData
+
+        count = 0
+        for user_state in user_state_iterator:
+            submission_uuid = user_state.state.get('submission_uuid')
+            if submission_uuid:
+                headers, rows = OraAggregateData.render_assessment_data(submission_uuid)
+            else:
+                # No submission for this user yet, so render an empty row.
+                headers = []
+                rows = [{}]
+
+            for row in rows:
+                report = OrderedDict(zip(headers, row))
+                yield (user_state.username, report)
+                count += 1
+
+            if limit_responses is not None and count >= limit_responses:
+                # End the iterator here
+                return

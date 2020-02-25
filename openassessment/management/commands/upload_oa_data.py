@@ -27,7 +27,6 @@ class Command(BaseCommand):
     """
 
     help = 'Create and upload CSV files for submission and assessment data.'
-    args = '<COURSE_ID> <S3_BUCKET_NAME>'
 
     OUTPUT_CSV_PATHS = {
         output_name: "{}.csv".format(output_name)
@@ -41,6 +40,10 @@ class Command(BaseCommand):
         super(Command, self).__init__(*args, **kwargs)
         self._history = list()
         self._submission_counter = 0
+
+    def add_arguments(self, parser):
+        parser.add_argument('course_id', type=six.text_type)
+        parser.add_argument('s3_bucket', type=six.text_type)
 
     @property
     def history(self):
@@ -65,10 +68,15 @@ class Command(BaseCommand):
             CommandError
 
         """
-        if len(args) < 2:
-            raise CommandError(u'Usage: upload_oa_data {}'.format(self.args))
+        if not options.get('course_id'):
+            raise CommandError("Course ID must be specified to fetch data")
 
-        course_id, s3_bucket = args[0], args[1]
+        if not options.get('s3_bucket'):
+            raise CommandError("S3 bucket must be specified to upload data")
+
+        course_id = options['course_id']
+        s3_bucket = options['s3_bucket']
+
         if isinstance(course_id, bytes):
             course_id = course_id.decode('utf-8')
         if isinstance(s3_bucket, bytes):

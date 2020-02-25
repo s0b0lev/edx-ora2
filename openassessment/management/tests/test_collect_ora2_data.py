@@ -85,7 +85,7 @@ class CollectOra2DataTest(CacheResetTest):
 
         mock_data.return_value = (self.test_header, self.test_rows)
 
-        with patch('openassessment.management.commands.collect_ora2_data.csv') as mock_write:
+        with patch('openassessment.management.commands.csv') as mock_write:
             call_command('collect_ora2_data', self.COURSE_ID)
 
             mock_writerow = mock_write.writer.return_value.writerow

@@ -54,7 +54,7 @@ class UploadDataTest(CacheResetTest):
         # This should generate the files even though
         # we don't have any data available.
         cmd = upload_oa_data.Command()
-        cmd.handle(self.COURSE_ID.encode('utf-8'), self.BUCKET_NAME)
+        cmd.handle(course_id=self.COURSE_ID.encode('utf-8'), s3_bucket=self.BUCKET_NAME)
 
         # Retrieve the uploaded file from the fake S3 implementation
         self.assertEqual(len(cmd.history), 1)

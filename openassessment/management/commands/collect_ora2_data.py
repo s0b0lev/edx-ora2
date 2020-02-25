@@ -8,7 +8,6 @@ Generates the same format as the instructor dashboard downloads.
 """
 from __future__ import absolute_import
 
-import csv
 import os
 
 import six
@@ -16,6 +15,7 @@ import six
 from django.core.management.base import BaseCommand, CommandError
 
 from openassessment.data import OraAggregateData
+from openassessment.management.commands import write_csv
 
 
 class Command(BaseCommand):
@@ -48,38 +48,21 @@ class Command(BaseCommand):
         """
         Run the command.
         """
-        if not options['course_id']:
-            raise CommandError("Course ID must be specified to fetch data")
+        if not options.get('course_id'):
+            raise CommandError("One or more Course IDs must be specified to fetch data")
 
-        course_id = options['course_id']
+        course_ids = options['course_id']
 
-        if options['file_name']:
-            file_name = options['file_name']
-        else:
-            file_name = ("%s-ora2.csv" % course_id).replace("/", "-")
+        for course_id in course_ids:
+            if options['file_name']:
+                file_name = options['file_name']
+            else:
+                file_name = ("%s-ora2.csv" % course_id).replace("/", "-")
 
-        if options['output_dir']:
-            csv_file = open(os.path.join(options['output_dir'], file_name), 'wb')
-        else:
-            csv_file = self.stdout
+            if options['output_dir']:
+                csv_file = open(os.path.join(options['output_dir'], file_name), 'w')
+            else:
+                csv_file = self.stdout
 
-        writer = csv.writer(csv_file, dialect='excel', quotechar='"', quoting=csv.QUOTE_ALL)
-
-        header, rows = OraAggregateData.collect_ora2_data(course_id)
-
-        writer.writerow(header)
-        for row in rows:
-            writer.writerow(_encode_row(row))
-
-
-def _encode_row(data_list):
-    """
-    Properly encode ora2 responses for transcription into a .csv
-    """
-    processed_row = []
-
-    for item in data_list:
-        new_item = six.text_type(item).encode('utf-8') if six.PY2 else six.text_type(item)
-        processed_row.append(new_item)
-
-    return processed_row
+            header, rows = OraAggregateData.collect_ora2_data(course_id)
+            write_csv(csv_file, header, rows)

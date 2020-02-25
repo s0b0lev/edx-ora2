@@ -7,12 +7,18 @@ from collections import defaultdict
 import csv
 import json
 
+try:
+    from urllib.parse import urljoin
+except ImportError:
+    from urlparse import urljoin
+
 import six
 
 from django.conf import settings
 
 from openassessment.assessment.models import Assessment, AssessmentFeedback, AssessmentPart
 from openassessment.workflow.models import AssessmentWorkflow
+from openassessment.xblock.openassessmentblock import OpenAssessmentBlock
 from submissions import api as sub_api
 
 
@@ -409,6 +415,78 @@ class OraAggregateData(object):
         return returned_string
 
     @classmethod
+    def _build_rubric_header(cls, assessment):
+        """
+        Args:
+            assessment (Assessment) - example assessment that contains the criterion.
+        Returns:
+            Array that contains an label for each part of the assessment(s) to report.
+        """
+        returned_header = []
+        criterion = 1
+        for part in assessment.parts.order_by('criterion__order_num'):
+            returned_header.append(u'criterion_{}: {}'.format(criterion, part.criterion.label))
+            returned_header.append('points_{}'.format(criterion))
+            returned_header.append('median_points_{}'.format(criterion))
+            returned_header.append('feedback_{}'.format(criterion))
+            criterion += 1
+        return returned_header
+
+    @classmethod
+    def _build_median_points(cls, assessments):
+        """
+        Args:
+            assessments (QuerySet) - assessments containing the parts that we would like to use to assess the median
+        Returns:
+            array of integers: one per criterion
+        """
+        median_points = []
+        for assessment in assessments:
+            part_idx = 0
+            for part in assessment.parts.order_by('criterion__order_num'):
+                if len(median_points) <= part_idx:
+                    median_points.append(0)
+
+                if part.option is not None and part.option.points is not None:
+                    median_points[part_idx] += part.option.points
+
+                part_idx += 1
+
+        num_assessments = len(assessments)
+        for idx, points in enumerate(median_points):
+            median_points[idx] = points / num_assessments
+
+        return median_points
+
+    @classmethod
+    def _build_assessment_parts_array(cls, assessment, median_points=None):
+        """
+        Args:
+            assessments (QuerySet) - assessments containing the parts that we would like to collate into one column.
+        Returns:
+            Array that contains an entry for each part of the assessment(s).
+        """
+        returned_cells = []
+        part_idx = 0
+        for part in assessment.parts.order_by('criterion__order_num'):
+            option_label = None
+            option_points = None
+            median_points_for_part = None
+            if part.option:
+                option_label = part.option.label
+                option_points = part.option.points
+
+            if median_points and len(median_points) > part_idx:
+                median_points_for_part = median_points[part_idx]
+
+            returned_cells.append(option_label or '')
+            returned_cells.append(option_points or 0)
+            returned_cells.append(median_points_for_part or 0)
+            returned_cells.append(part.feedback or '')
+            part_idx += 1
+        return returned_cells
+
+    @classmethod
     def _build_feedback_options_cell(cls, assessments):
         """
         Args:
@@ -438,6 +516,25 @@ class OraAggregateData(object):
         except AssessmentFeedback.DoesNotExist:
             return u""
         return feedback.feedback_text
+
+    @classmethod
+    def _build_response_file_links(cls, submission):
+        """
+        Args:
+            submission - object
+        Returns:
+            string that contains newline-separated URLs to each of the files uploaded for this submission.
+        """
+        file_links = ''
+        sep = "\n"
+        base_url = getattr(settings, 'LMS_ROOT_URL', '')
+
+        file_downloads = OpenAssessmentBlock.get_download_urls_from_submission(submission)
+        for url, _description, _filename, _show_delete in file_downloads:
+            if file_links:
+                file_links += sep
+            file_links += urljoin(base_url, url)
+        return file_links
 
     @classmethod
     def collect_ora2_data(cls, course_id):
@@ -504,6 +601,81 @@ class OraAggregateData(object):
             'Feedback Statements Selected',
             'Feedback on Peer Assessments'
         ]
+        return header, rows
+
+    @classmethod
+    def render_assessment_data(cls, submission_uuid):
+        """
+        Gathers the assessment data for the given submission, and returns the headers, and rows.
+        """
+        rows = []
+        rubric_header = []
+
+        submission = sub_api.get_submission_and_student(submission_uuid)
+        student_item = submission.get('student_item', {})
+        score = {}
+        if student_item:
+            score = sub_api.get_score(student_item) or {}
+        assessments = cls._use_read_replica(
+            Assessment.objects.prefetch_related('parts').
+            prefetch_related('rubric').
+            filter(
+                submission_uuid=submission['uuid']
+            )
+        )
+
+        median_points = cls._build_median_points(assessments)
+        feedback_cell = cls._build_feedback_cell(submission['uuid'])
+        response_files = cls._build_response_file_links(submission)
+
+        for assessment in assessments:
+            if not rubric_header:
+                rubric_header = cls._build_rubric_header(assessment)
+
+            assessment_cells = cls._build_assessment_parts_array(assessment, median_points)
+            feedback_options_cell = cls._build_feedback_options_cell([assessment])
+
+            row = [
+                submission['uuid'],
+                student_item['item_id'],
+                student_item['student_id'],
+                assessment.id,
+                assessment.scored_at.strftime('%F'),
+                assessment.scored_at.strftime('%T'),
+                assessment.score_type,
+                assessment.scorer_id,
+            ] + assessment_cells + [
+                assessment.feedback or '',
+                score.get('created_at', ''),
+                score.get('points_earned', ''),
+                score.get('points_possible', ''),
+                feedback_options_cell,
+                feedback_cell,
+                assessment.scored_at,
+                response_files,
+            ]
+            rows.append(row)
+
+        header = [
+            'Submission ID',
+            'Item ID',
+            'Anonymized Student ID',
+            'Assessment ID',
+            'Assessment Scored Date',
+            'Assessment Scored Time',
+            'Assessment Type',
+            'Anonymous Scorer Id',
+        ] + rubric_header + [
+            'Overall Feedback',
+            'Date/Time Final Score Given',
+            'Final Score Points Earned',
+            'Final Score Points Possible',
+            'Feedback Statements Selected',
+            'Feedback on Assessment',
+            'Assessment Scored At',
+            'Response files',
+        ]
+
         return header, rows
 
     @classmethod
