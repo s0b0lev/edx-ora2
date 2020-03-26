@@ -68,7 +68,7 @@ class AssessmentWorkflow(TimeStampedModel, StatusModel):
         "cancelled"  # User submission has been cancelled.
     ]
 
-    STATUS_VALUES = STEPS + STATUSES
+    STATUS_VALUES = list(STEPS) + STATUSES
 
     STATUS = Choices(*STATUS_VALUES)  # implicit "status" field
 

@@ -484,7 +484,7 @@ class OraAggregateData(object):
         base_url = getattr(settings, 'LMS_ROOT_URL', '')
 
         file_downloads = OpenAssessmentBlock.get_download_urls_from_submission(submission)
-        for url, _description, _filename, _show_delete in file_downloads:
+        for url, _description in file_downloads:
             if file_links:
                 file_links += sep
             file_links += urljoin(base_url, url)
