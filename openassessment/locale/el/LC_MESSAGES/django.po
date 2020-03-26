@@ -6,9 +6,10 @@
 # Translators:
 # anastasia_georgantiri <a.georgantiri@yahoo.com>, 2015
 # Dennis Miliopoulos, 2014
+# Dimitris Agelakis <minoan07@gmail.com>, 2019
 # Dimosthenis Karakatsoulis <karakatsou@gmail.com>, 2015
 # Frog Princess <anna.wrt@gmail.com>, 2015
-# Katerina Ligkovanli <kaligova@gmail.com>, 2016-2017
+# Katerina Ligkovanli <kaligova@gmail.com>, 2016-2017,2019-2020
 # LOUKAS SKOUROLIAKOS, 2015
 # Nick Gikopoulos, 2015,2017
 # Panagiotis Moutsopoulos <pmoutsop@gmail.com>, 2015
@@ -21,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-29 13:04-0400\n"
-"PO-Revision-Date: 2018-03-29 22:44+0000\n"
-"Last-Translator: Ned Batchelder <ned@edx.org>\n"
+"POT-Creation-Date: 2020-02-20 13:05-0500\n"
+"PO-Revision-Date: 2020-02-04 08:29+0000\n"
+"Last-Translator: Panos Chronis <panosfyra4@yahoo.gr>\n"
 "Language-Team: Greek (http://www.transifex.com/open-edx/edx-platform/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,139 +32,115 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: openassessment/assessment/api/student_training.py:176
+#: openassessment/assessment/api/student_training.py:180
 msgid "Could not parse serialized rubric"
 msgstr ""
 
-#: openassessment/assessment/api/student_training.py:188
+#: openassessment/assessment/api/student_training.py:192
 msgid ""
 "If your assignment includes a learner training step, the rubric must have at"
 " least one criterion, and that criterion must have at least one option."
 msgstr "Εάν η αλληλοαξιολόγησή σας περιλαμβάνει βήμα εξάσκησης των σπουδαστών, η κατηγορία πρέπει να περιλαμβάνει τουλάχιστον ένα κριτήριο και το κριτήριο αυτό θα πρέπει να έχει τουλάχιστον μία επιλογή."
 
-#: openassessment/assessment/api/student_training.py:200
+#: openassessment/assessment/api/student_training.py:204
 #, python-brace-format
 msgid "Example {example_number} has a validation error: {error}"
 msgstr ""
 
-#: openassessment/assessment/api/student_training.py:214
+#: openassessment/assessment/api/student_training.py:218
 #, python-brace-format
 msgid ""
 "Example {example_number} has an invalid option for \"{criterion_name}\": "
 "\"{option_name}\""
 msgstr "Το παράδειγμα {example_number} έχει μια λανθασμένη επιλογή για το \"{criterion_name}\": \"{option_name}\""
 
-#: openassessment/assessment/api/student_training.py:224
+#: openassessment/assessment/api/student_training.py:228
 #, python-brace-format
 msgid "Example {example_number} has an extra option for \"{criterion_name}\""
 msgstr ""
 
-#: openassessment/assessment/api/student_training.py:237
+#: openassessment/assessment/api/student_training.py:241
 #, python-brace-format
 msgid "Example {example_number} is missing an option for \"{criterion_name}\""
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:12
-msgid "Open Response Assessment"
-msgstr "Εργασία αλληλοαξιολόγησης"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:14
-msgid "Settings"
+#: openassessment/templates/openassessmentblock/edit/oa_edit.html:25
+msgid "Save"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:15
-msgid "Rubric"
+#: openassessment/templates/openassessmentblock/edit/oa_edit.html:29
+msgid "Cancel"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:16
-#: openassessment/templates/openassessmentblock/edit/oa_edit_prompt.html:7
-msgid "Prompt"
-msgstr ""
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:23
-msgid "Rubric Change Impacts Settings Section"
-msgstr ""
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:24
-msgid ""
-"A change that you made to this assessment's rubric has an impact on some "
-"examples laid out in the settings tab. For more information, go to the "
-"Settings section and fix the areas highlighted in red."
-msgstr ""
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:28
-msgid "close alert"
-msgstr ""
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:41
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:6
 msgid "Display Name "
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:44
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:9
 msgid "The display name for this component."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:51
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:16
 msgid "Response Start Date"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:64
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:29
 msgid "Response Start Time"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:73
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:38
 msgid "The date and time when learners can begin submitting responses."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:80
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:45
 msgid "Response Due Date"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:93
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:58
 msgid "Response Due Time"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:102
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:67
 msgid "The date and time when learners can no longer submit responses."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:106
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:71
 msgid "Text Response"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:114
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:79
 msgid ""
 "Specify whether learners must include a text based response to this "
 "problem's prompt."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:119
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:84
 msgid "File Uploads Response"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:127
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:92
 msgid ""
 "Specify whether learners are able to upload files as a part of their "
 "response."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:131
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:96
 msgid "File Upload Types"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:133
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:98
 msgid "PDF or Image Files"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:134
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:99
 msgid "Image Files"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:135
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:100
 msgid "Custom File Types"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:139
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:104
 msgid ""
 "Specify whether learners can submit files along with their text responses. "
 "Select Images to allow JPG, GIF, or PNG files. Select PDF or Images to allow"
@@ -172,61 +149,57 @@ msgid ""
 "with caution.)"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:143
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:108
 msgid "File Types"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:151
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:116
 msgid ""
 "Enter the file extensions, separated by commas, that you want learners to be"
 " able to upload. For example: pdf,doc,docx."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:159
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:124
 msgid "Allow LaTeX Responses"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:161
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:126
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:151
 msgid "False"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:162
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:127
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:152
 msgid "True"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:165
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:130
 msgid "Specify whether learners can write LaTeX formatted strings"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:169
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:134
 #: openassessment/templates/openassessmentblock/leaderboard/oa_leaderboard_show.html:8
 #: openassessment/templates/openassessmentblock/leaderboard/oa_leaderboard_waiting.html:8
 msgid "Top Responses"
 msgstr "Κορυφαίες Απαντήσεις"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:178
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:143
 msgid ""
 "Specify the number of top scoring responses to display. Valid numbers are 0 "
 "to 99. If the number is 0, the Top Responses section does not appear to "
 "learners."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:184
-msgid ""
-"In this assignment, you can include learner training, peer assessment, self "
-"assessment, and staff assessment steps. Select the steps that you want "
-"below, and then drag them into the order you want. If you include a learner "
-"training step, it must precede all other steps. If you include a staff "
-"assessment step, it must be the final step. After you release an ORA "
-"assignment, you cannot change the type and number of assessment steps."
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:149
+msgid "Teams Enabled"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:200
-msgid "Save"
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:156
+msgid "Specify whether team submissions are allowed for this response."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit.html:204
-msgid "Cancel"
+#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html:161
+msgid "Select Team Set"
 msgstr ""
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_criterion.html:6
@@ -263,26 +236,58 @@ msgid "Feedback for This Criterion"
 msgstr ""
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_criterion.html:54
-#: openassessment/xblock/studio_mixin.py:47
+#: openassessment/xblock/studio_mixin.py:54
 msgid "None"
 msgstr ""
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_criterion.html:55
-#: openassessment/xblock/studio_mixin.py:46
+#: openassessment/xblock/studio_mixin.py:53
 msgid "Optional"
 msgstr "Προαιρετικό"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_criterion.html:56
 #: openassessment/templates/openassessmentblock/oa_rubric.html:13
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:91
-#: openassessment/xblock/studio_mixin.py:45
+#: openassessment/xblock/studio_mixin.py:52
 msgid "Required"
-msgstr ""
+msgstr "Απαιτείται"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_criterion.html:61
 msgid ""
 "Select one of the options above. This describes whether or not the learner "
 "will have to provide criterion feedback."
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html:3
+msgid "Open Response Assessment"
+msgstr "Εργασία αλληλοαξιολόγησης"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html:5
+msgid "Settings"
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html:6
+msgid "Rubric"
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html:7
+#: openassessment/templates/openassessmentblock/edit/oa_edit_prompt.html:7
+msgid "Prompt"
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html:14
+msgid "Rubric Change Impacts Settings Section"
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html:15
+msgid ""
+"A change that you made to this assessment's rubric has an impact on some "
+"examples laid out in the settings tab. For more information, go to the "
+"Settings section and fix the areas highlighted in red."
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html:19
+msgid "close alert"
 msgstr ""
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_option.html:5
@@ -338,7 +343,7 @@ msgstr ""
 #: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html:36
 #: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html:22
 msgid "Start Date"
-msgstr ""
+msgstr "Ημερομηνία Έναρξης"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html:45
 #: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html:31
@@ -435,6 +440,16 @@ msgstr ""
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html:60
 msgid "Enter the date and time when all self assessments must be complete."
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_settings.html:8
+msgid ""
+"In this assignment, you can include learner training, peer assessment, self "
+"assessment, and staff assessment steps. Select the steps that you want "
+"below, and then drag them into the order you want. If you include a learner "
+"training step, it must precede all other steps. If you include a staff "
+"assessment step, it must be the final step. After you release an ORA "
+"assignment, you cannot change the type and number of assessment steps."
 msgstr ""
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_staff_assessment.html:8
@@ -549,7 +564,7 @@ msgid ""
 msgstr "\n%(points_earned)s από %(points_possible)s"
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_complete.html:38
-#: openassessment/templates/openassessmentblock/response/oa_response.html:23
+#: openassessment/templates/openassessmentblock/response/oa_response.html:22
 msgid "Your Response"
 msgstr "Η εργασία σας"
 
@@ -692,7 +707,7 @@ msgstr ""
 
 #: openassessment/templates/openassessmentblock/instructor_dashboard/oa_listing.html:6
 msgid "Please wait"
-msgstr ""
+msgstr "Παρακαλούμε περιμένετε"
 
 #: openassessment/templates/openassessmentblock/leaderboard/oa_leaderboard_show.html:20
 #, python-format
@@ -703,13 +718,13 @@ msgstr "%(num_points)s μονάδες"
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:74
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:53
 msgid "Your peer's response to the prompt above"
-msgstr ""
+msgstr "Η εργασία του συμφοιτητή σας στο παραπάνω θέμα"
 
 #: openassessment/templates/openassessmentblock/leaderboard/oa_leaderboard_waiting.html:18
 msgid ""
 "After you complete all the steps of this assignment, you can see the top-"
 "scoring responses from your peers."
-msgstr ""
+msgstr "Θα δείτε τη βαθμολογία που λάβατε από τους συμφοιτητές σας, αφού ολοκληρώστε όλα τα βήματα της διαδικασίας αλληλοαξιολόγησης"
 
 #: openassessment/templates/openassessmentblock/message/oa_message_closed.html:8
 msgid ""
@@ -760,7 +775,7 @@ msgid ""
 "\n"
 "                                    %(start_strong)sThis assignment is in progress. The self assessment step will close soon.%(end_strong)s You still need to complete the %(start_link)sself assessment%(end_link)s step.\n"
 "                                "
-msgstr ""
+msgstr "\n%(start_strong)sΗ εργασία είναι σε εξέλιξη. Η διαδικασία αυτοαξιολόγησης θα λήξει σύντομα.%(end_strong)s Θα πρέπει να ολοκληρώσετε σύντομα το βήμα της %(start_link)sαυτοαξιολόγησης%(end_link)s."
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:24
 #, python-format
@@ -776,7 +791,7 @@ msgid ""
 "\n"
 "                                    This assignment is in progress.%(start_strong)sThe peer assessment step will close soon.%(end_strong)s All submitted peer responses have been assessed. Check back later to see if more learners have submitted responses. You still need to complete the %(start_link)speer assessment%(end_link)s step.\n"
 "                                "
-msgstr ""
+msgstr "\nΗ εργασία είναι σε εξέλιξη. %(start_strong)sΗ αλληλοαξιολόγηση θα λήξει σύντομα.%(end_strong)s Όλες οι υποβληθείσες εργασίες έχουν αξιολογηθεί. Ελέγξτε αργότερα εάν και άλλοι φοιτητές έχουν υποβάλλει τις αποκρίσεις τους, καθώς θα πρέπει να ολοκληρώσετε άμεσα και τη διαδικασία της %(start_link)sαλληλοαξιολόγησης%(end_link)s."
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:42
 #, python-format
@@ -802,13 +817,27 @@ msgid ""
 "                                "
 msgstr "\nΗ εργασία είναι σε εξέλιξη. Θα πρέπει να ολοκληρώσετε άμεσα τη διαδικασία %(start_link)sαλληλοαξιολόγησης%(end_link)s."
 
+#: openassessment/templates/openassessmentblock/message/oa_message_no_team.html:4
+msgid "Team membership is required to view this assignment"
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/message/oa_message_no_team.html:7
+#, python-format
+msgid ""
+"\n"
+"            This is a team assignment for team set \"%(teamset_name)s\".\n"
+"            You are currently not on a team in team set \"%(teamset_name)s\".\n"
+"            You must be on a team in team set \"%(teamset_name)s\" to access this team assignment.\n"
+"            "
+msgstr ""
+
 #: openassessment/templates/openassessmentblock/message/oa_message_open.html:7
 #, python-format
 msgid ""
 "\n"
 "                    Assignment submissions will close soon. To receive a grade, first provide a response to the prompt, then complete the steps below the %(start_tag)sYour Response%(end_tag)s field.\n"
 "                "
-msgstr ""
+msgstr "\nΗ υποβολή των εργασιών θα λήξει σύντομα. Για να λάβετε βαθμό, θα πρέπει πρώτα να υποβάλετε την εργασία σας και στη συνέχεια να ολοκληρώσετα τα βήματα που θα δείτε κάτω από το πεδίο %(start_tag)sΗ Εργασία σας%(end_tag)s."
 
 #: openassessment/templates/openassessmentblock/message/oa_message_open.html:11
 #, python-format
@@ -855,13 +884,26 @@ msgstr ""
 
 #: openassessment/templates/openassessmentblock/oa_submission_answer.html:8
 msgid "The question for this section"
+msgstr "Το θέμα της εργασίας για αυτή την ενότητα"
+
+#: openassessment/templates/openassessmentblock/oa_team_uploaded_files.html:8
+msgid "Files that were uploaded by your teammates:"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/oa_uploaded_file.html:28
+#: openassessment/templates/openassessmentblock/oa_team_uploaded_files.html:27
+#: openassessment/templates/openassessmentblock/oa_uploaded_file.html:34
 msgid "View the files associated with this submission:"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/oa_uploaded_file.html:36
+#: openassessment/templates/openassessmentblock/oa_team_uploaded_files.html:31
+msgid "Uploaded by"
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/oa_uploaded_file.html:16
+msgid "Files that were uploaded by you:"
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/oa_uploaded_file.html:48
 msgid ""
 "Caution: These files were uploaded by another course learner and have not "
 "been verified, screened, approved, reviewed, or endorsed by the site "
@@ -905,7 +947,7 @@ msgstr ""
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:65
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:45
 msgid "Read and assess the following response from one of your peers."
-msgstr ""
+msgstr "Διαβάστε και αξιολογήστε την παρακάτω εργασία που έγραψε κάποιος από τους συμφοιτητές σας."
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:77
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:56
@@ -928,7 +970,7 @@ msgstr "Δεν ήταν εφικτή η υποβολή της αξιολόγησ
 #: openassessment/templates/openassessmentblock/response/oa_response_cancelled.html:21
 #: openassessment/templates/openassessmentblock/self/oa_self_cancelled.html:21
 #: openassessment/templates/openassessmentblock/student_training/student_training_cancelled.html:18
-#: openassessment/xblock/staff_assessment_mixin.py:106
+#: openassessment/xblock/staff_assessment_mixin.py:107
 msgid "Cancelled"
 msgstr ""
 
@@ -958,7 +1000,7 @@ msgid ""
 "You have successfully completed all of the required peer assessments for "
 "this assignment. You may assess additional peer responses if you want to. "
 "Completing additional assessments will not affect your final grade."
-msgstr ""
+msgstr "Έχετε ολοκληρώσει επιτυχώς όλες τις απαιτούμενες αξιολογήσεις δοκιμίων συμφοιτητών σας. Μπορείτε αν το επιθυμείτε να συνεχίσετε να αξιολογείτε. Οι επιπλέον αυτές αξιολογήσεις δεν αυξάνουν την τελική σας βαθμολογία."
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_complete.html:36
 msgid "We could not retrieve additional submissions for assessment"
@@ -987,8 +1029,8 @@ msgstr ""
 #: openassessment/templates/openassessmentblock/response/oa_response_unavailable.html:17
 #: openassessment/templates/openassessmentblock/self/oa_self_unavailable.html:17
 #: openassessment/templates/openassessmentblock/student_training/student_training_unavailable.html:16
-#: openassessment/xblock/staff_assessment_mixin.py:99
-#: openassessment/xblock/staff_assessment_mixin.py:123
+#: openassessment/xblock/staff_assessment_mixin.py:100
+#: openassessment/xblock/staff_assessment_mixin.py:124
 msgid "Not Available"
 msgstr "Δεν είναι ακόμη διαθέσιμο"
 
@@ -1011,7 +1053,7 @@ msgstr "Έχουν αξιολογηθεί όλες οι μέχρι τώρα υπ
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "available August 13th, 2014 (in 5 days and
 #. 45 minutes)"
-#: openassessment/templates/openassessmentblock/response/oa_response.html:31
+#: openassessment/templates/openassessmentblock/response/oa_response.html:30
 #, python-format, python-brace-format
 msgid ""
 "\n"
@@ -1022,7 +1064,7 @@ msgstr ""
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "due August 13th, 2014 (in 5 days and 45
 #. minutes)"
-#: openassessment/templates/openassessmentblock/response/oa_response.html:38
+#: openassessment/templates/openassessmentblock/response/oa_response.html:37
 #, python-format, python-brace-format
 msgid ""
 "\n"
@@ -1030,79 +1072,97 @@ msgid ""
 "            "
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:46
+#: openassessment/templates/openassessmentblock/response/oa_response.html:45
 #: openassessment/templates/openassessmentblock/self/oa_self_assessment.html:46
 msgid "In Progress"
 msgstr "Σε εξέλιξη"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:57
+#: openassessment/templates/openassessmentblock/response/oa_response.html:56
 msgid "Enter your response to the prompt."
 msgstr "Εισάγετε εδώ την απάντησή σας."
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:59
+#: openassessment/templates/openassessmentblock/response/oa_response.html:58
 msgid ""
 "You can save your progress and return to complete your response at any time "
 "before the due date"
 msgstr "Μπορείτε να αποθηκεύσετε την εργασία σας και να επιστρέψετε για να την ολοκληρώσετε όποτε επιθυμείτε, πριν τη λήξη της προθεσμίας υποβολής της."
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:64
+#: openassessment/templates/openassessmentblock/response/oa_response.html:63
 msgid ""
 "You can save your progress and return to complete your response at any time."
 msgstr "Μπορείτε να αποθηκεύσετε την εργασία σας και να επιστρέψετε ανά πάσα στιγμή για να την ολοκληρώσετε."
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:66
+#: openassessment/templates/openassessmentblock/response/oa_response.html:65
 msgid "After you submit your response, you cannot edit it"
 msgstr "Αφού υποβάλετε την εργασία σας, δεν θα μπορείτε πλέον να την επεξεργαστείτε"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:75
+#: openassessment/templates/openassessmentblock/response/oa_response.html:74
 msgid "The prompt for this section"
 msgstr "Το θέμα της εργασίας"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:93
+#: openassessment/templates/openassessmentblock/response/oa_response.html:92
 msgid "Your response (required)"
 msgstr "Η απάντησή σας στο θέμα της εργασίας (απαιτείται)"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:95
+#: openassessment/templates/openassessmentblock/response/oa_response.html:94
 msgid "Your response (optional)"
-msgstr ""
+msgstr "Η απάντησή σας στο θέμα της εργασίας (προαιρετικά)"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:105
+#: openassessment/templates/openassessmentblock/response/oa_response.html:104
 msgid "Enter your response to the prompt above."
 msgstr "Εισάγετε εδώ την απάντησή σας στο παραπάνω θέμα."
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:119
+#: openassessment/templates/openassessmentblock/response/oa_response.html:116
+msgid "You are on team "
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/response/oa_response.html:118
+msgid "Team Members: "
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/response/oa_response.html:122
+msgid ""
+"Note: this is a team assignment. Make sure to coordinate with your teammates"
+" to avoid overwriting each other's work."
+msgstr ""
+
+#: openassessment/templates/openassessmentblock/response/oa_response.html:129
 msgid "We could not save your progress"
 msgstr "Δεν ήταν δυνατή η αποθήκευση της εργασίας σας"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:126
+#: openassessment/templates/openassessmentblock/response/oa_response.html:136
 msgid "Save your progress"
 msgstr "Αποθηκεύστε την εργασία σας"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:130
+#: openassessment/templates/openassessmentblock/response/oa_response.html:140
 msgid "Your Submission Status"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:142
+#: openassessment/templates/openassessmentblock/response/oa_response.html:152
 msgid "We could not upload files"
+msgstr "Η μεταφόρτωση του αρχείου σας δεν κατέστη δυνατή"
+
+#: openassessment/templates/openassessmentblock/response/oa_response.html:158
+msgid "We could not delete files"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:146
+#: openassessment/templates/openassessmentblock/response/oa_response.html:162
 msgid "Select a file to upload for this submission."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:148
+#: openassessment/templates/openassessmentblock/response/oa_response.html:164
 msgid "Upload files"
-msgstr ""
+msgstr "Μεταφόρτωση αρχείων"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:157
+#: openassessment/templates/openassessmentblock/response/oa_response.html:177
 msgid "You may continue to work on your response until you submit it."
 msgstr "Μπορείτε να συνεχίσετε να επεξεργάζεστε την εργασία σας μέχρι τη στιγμή που θα την υποβάλετε"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:164
+#: openassessment/templates/openassessmentblock/response/oa_response.html:184
 msgid "We could not submit your response"
 msgstr "Η υποβολή της εργασίας σας δεν ήταν εφικτή"
 
-#: openassessment/templates/openassessmentblock/response/oa_response.html:174
+#: openassessment/templates/openassessmentblock/response/oa_response.html:194
 msgid "Submit your response and move to the next step"
 msgstr "Υποβάλετε την εργασία σας και προχωρήστε στο επόμενο βήμα"
 
@@ -1152,8 +1212,8 @@ msgstr ""
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:20
 #: openassessment/templates/openassessmentblock/self/oa_self_complete.html:18
 #: openassessment/templates/openassessmentblock/student_training/student_training_complete.html:17
-#: openassessment/xblock/staff_assessment_mixin.py:113
-#: openassessment/xblock/staff_assessment_mixin.py:134
+#: openassessment/xblock/staff_assessment_mixin.py:114
+#: openassessment/xblock/staff_assessment_mixin.py:137
 msgid "Complete"
 msgstr ""
 
@@ -1161,7 +1221,7 @@ msgstr ""
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:51
 #: openassessment/templates/openassessmentblock/self/oa_self_assessment.html:57
 msgid "Your response"
-msgstr ""
+msgstr "Η απάντησή σας στο θέμα της εργασίας"
 
 #: openassessment/templates/openassessmentblock/response/oa_response_graded.html:33
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:54
@@ -1172,7 +1232,7 @@ msgstr ""
 msgid ""
 "Your response has been submitted. You will receive your grade after all "
 "steps are complete and your response is fully assessed."
-msgstr "Η εργασία σας έχει υποβληθεί. Θα λάβετε το βαθμό σας αφού ολοκληρώσετε όλες τις απαιτούμενες διαδικασίες και η εργασία σας αξιολογηθεί επίσης από τον απαιτούμενο αριθμό συμφοιτητών σας."
+msgstr " Η εργασία σας έχει υποβληθεί. Θα λάβετε το βαθμό σας αφού ολοκληρώσετε όλες τις απαιτούμενες διαδικασίες και η εργασία σας αξιολογηθεί επίσης από τον απαιτούμενο αριθμό συμφοιτητών σας."
 
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:34
 #, python-format
@@ -1236,9 +1296,9 @@ msgid ""
 msgstr "Η προθεσμία για αυτή την διαδικασία έχει παρέλθει και το βήμα αυτό έχει κλείσει. Δεν μπορείτε πλέον να ολοκληρώσετε την αυτοαξιολόγησή σας ή να συνεχίσετε με την εργασία σας. Αντί βαθμού, θα λάβετε την ειδοποίηση ότι \"Η εργασία δεν ολοκληρώθηκε\"."
 
 #: openassessment/templates/openassessmentblock/staff/oa_staff_grade.html:13
-#: openassessment/xblock/grade_mixin.py:348
+#: openassessment/xblock/grade_mixin.py:351
 msgid "Staff Grade"
-msgstr ""
+msgstr "Βαθμός Διδάσκοντα"
 
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_area.html:6
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_area.html:17
@@ -1458,33 +1518,33 @@ msgstr "Η εργασία αλληλοαξιολόγησης δεν έχει α�
 msgid "The problem has not been completed."
 msgstr "Οι απαιτούμενες διαδικασίες δεν έχουν ακόμη ολοκληρωθεί."
 
-#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:167
+#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:168
 msgid "Submit Assessment Grade Override"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:183
+#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:185
 msgid "Remove Submission From Peer Grading"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:192
+#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:194
 msgid "Caution: This Action Cannot Be Undone"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:193
+#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:195
 msgid ""
 "Removing a learner's submission cannot be undone and should be done with "
 "caution."
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:198
+#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:200
 msgid "Comments:"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:207
+#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:209
 msgid "Remove submission"
 msgstr ""
 
-#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:222
+#: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:224
 msgid "A response was not found for this learner."
 msgstr ""
 
@@ -1615,23 +1675,23 @@ msgstr ""
 msgid "The Learner Training Step of this assignment could not be loaded."
 msgstr ""
 
-#: openassessment/xblock/data_conversion.py:244
+#: openassessment/xblock/data_conversion.py:249
 msgid "You must provide options selected in the assessment."
 msgstr ""
 
-#: openassessment/xblock/data_conversion.py:247
+#: openassessment/xblock/data_conversion.py:252
 msgid "You must provide overall feedback in the assessment."
 msgstr ""
 
-#: openassessment/xblock/data_conversion.py:250
+#: openassessment/xblock/data_conversion.py:255
 msgid "You must provide feedback for criteria in the assessment."
 msgstr ""
 
-#: openassessment/xblock/grade_mixin.py:72
-#: openassessment/xblock/leaderboard_mixin.py:53
-#: openassessment/xblock/self_assessment_mixin.py:39
-#: openassessment/xblock/student_training_mixin.py:57
-#: openassessment/xblock/student_training_mixin.py:264
+#: openassessment/xblock/grade_mixin.py:74
+#: openassessment/xblock/leaderboard_mixin.py:56
+#: openassessment/xblock/self_assessment_mixin.py:41
+#: openassessment/xblock/student_training_mixin.py:60
+#: openassessment/xblock/student_training_mixin.py:265
 msgid "An unexpected error occurred."
 msgstr "Προέκυψε ένα μη αναμενόμενο σφάλμα"
 
@@ -1651,47 +1711,47 @@ msgstr "Δεν μπόρεσαν να αποθηκευτούν τα σχόλια 
 msgid "Feedback saved."
 msgstr ""
 
-#: openassessment/xblock/grade_mixin.py:349
-#: openassessment/xblock/grade_mixin.py:495
+#: openassessment/xblock/grade_mixin.py:352
+#: openassessment/xblock/grade_mixin.py:498
 msgid "Staff Comments"
 msgstr ""
 
-#: openassessment/xblock/grade_mixin.py:355
+#: openassessment/xblock/grade_mixin.py:358
 msgid "Peer Median Grade"
 msgstr "ΔΙΑΜΕΣΟΣ ΤΩΝ ΒΑΘΜΩΝ ΠΟΥ ΛΑΒΑΤΕ ΑΠΟ ΤΟΥΣ ΣΥΜΦΟΙΤΗΤΕΣ ΣΑΣ"
 
-#: openassessment/xblock/grade_mixin.py:360
-#: openassessment/xblock/grade_mixin.py:502
+#: openassessment/xblock/grade_mixin.py:363
+#: openassessment/xblock/grade_mixin.py:505
 #, python-brace-format
 msgid "Peer {peer_index}"
 msgstr "Συμφοιτητής {peer_index}"
 
-#: openassessment/xblock/grade_mixin.py:361
+#: openassessment/xblock/grade_mixin.py:364
 msgid "Peer Comments"
 msgstr "Σχόλια του συμφοιτητή σας"
 
-#: openassessment/xblock/grade_mixin.py:371
+#: openassessment/xblock/grade_mixin.py:374
 msgid "Self Assessment Grade"
 msgstr "Βαθμός Αυτοαξιολόγησης"
 
-#: openassessment/xblock/grade_mixin.py:371
+#: openassessment/xblock/grade_mixin.py:374
 msgid "Your Self Assessment"
 msgstr "Η Αυτοαξιολόγησή σας"
 
-#: openassessment/xblock/grade_mixin.py:372
-#: openassessment/xblock/grade_mixin.py:514
+#: openassessment/xblock/grade_mixin.py:375
+#: openassessment/xblock/grade_mixin.py:517
 msgid "Your Comments"
 msgstr ""
 
-#: openassessment/xblock/grade_mixin.py:467
+#: openassessment/xblock/grade_mixin.py:471
 msgid "Waiting for peer reviews"
 msgstr "Αναμείνατε την αξιολόγηση των συμφοιτητών σας"
 
-#: openassessment/xblock/grade_mixin.py:507
+#: openassessment/xblock/grade_mixin.py:510
 msgid "Peer"
 msgstr ""
 
-#: openassessment/xblock/peer_assessment_mixin.py:62
+#: openassessment/xblock/peer_assessment_mixin.py:63
 msgid "You must submit a response before you can perform a peer assessment."
 msgstr "Θα πρέπει να υποβάλετε την εργασία σας προτού προχωρήσετε στην αξιολόγηση των συμφοιτητών σας"
 
@@ -1707,11 +1767,11 @@ msgid "Your peer assessment could not be submitted."
 msgstr "Η υποβολή της αξιολόγησή σας για την εργασία του συμφοιτητή σας δεν κατέστη εφικτή"
 
 #: openassessment/xblock/peer_assessment_mixin.py:120
-#: openassessment/xblock/student_training_mixin.py:270
+#: openassessment/xblock/student_training_mixin.py:271
 msgid "Could not update workflow status."
 msgstr ""
 
-#: openassessment/xblock/peer_assessment_mixin.py:129
+#: openassessment/xblock/peer_assessment_mixin.py:128
 msgid "Could not load peer assessment."
 msgstr "Η φόρτωση της αλληλοαξιολόγησης δεν είναι εφικτή"
 
@@ -1728,51 +1788,51 @@ msgstr "Υποβάλετε την αξιολόγησή σας και προχω�
 msgid "Submit your assessment and move to response #{response_number}"
 msgstr "Υποβάλετε την αξιολόγησή σας και προχωρήστε στην εργασία#{response_number}"
 
-#: openassessment/xblock/resolve_dates.py:51
+#: openassessment/xblock/resolve_dates.py:56
 #, python-brace-format
 msgid ""
 "'{date}' is an invalid date format. Make sure the date is formatted as YYYY-"
 "MM-DDTHH:MM:SS."
 msgstr ""
 
-#: openassessment/xblock/resolve_dates.py:57
+#: openassessment/xblock/resolve_dates.py:61
 #, python-brace-format
 msgid "'{date}' must be a date string or datetime"
 msgstr ""
 
-#: openassessment/xblock/resolve_dates.py:210
+#: openassessment/xblock/resolve_dates.py:214
 #, python-brace-format
 msgid ""
 "This step's start date '{start}' cannot be earlier than the previous step's "
 "start date '{prev}'."
 msgstr ""
 
-#: openassessment/xblock/resolve_dates.py:218
+#: openassessment/xblock/resolve_dates.py:222
 #, python-brace-format
 msgid ""
 "This step's due date '{due}' cannot be later than the next step's due date "
 "'{prev}'."
 msgstr ""
 
-#: openassessment/xblock/resolve_dates.py:234
+#: openassessment/xblock/resolve_dates.py:238
 #, python-brace-format
 msgid "The start date '{start}' cannot be later than the due date '{due}'"
 msgstr ""
 
-#: openassessment/xblock/self_assessment_mixin.py:137
+#: openassessment/xblock/self_assessment_mixin.py:140
 msgid "You must submit a response before you can perform a self-assessment."
 msgstr "Θα πρέπει να υποβάλετε την εργασία σας προτού μπορέσετε να προχωρήσετε στην αυτοαξιολόγησή σας."
 
-#: openassessment/xblock/self_assessment_mixin.py:159
-#: openassessment/xblock/self_assessment_mixin.py:166
+#: openassessment/xblock/self_assessment_mixin.py:162
+#: openassessment/xblock/self_assessment_mixin.py:169
 msgid "Your self assessment could not be submitted."
 msgstr "Η υποβολή της αυτοαξιολόγησής σας δεν ήταν εφικτή"
 
-#: openassessment/xblock/staff_area_mixin.py:38
+#: openassessment/xblock/staff_area_mixin.py:39
 msgid "You do not have permission to schedule training"
 msgstr ""
 
-#: openassessment/xblock/staff_area_mixin.py:39
+#: openassessment/xblock/staff_area_mixin.py:40
 msgid "You do not have permission to reschedule tasks."
 msgstr ""
 
@@ -1792,256 +1852,256 @@ msgstr ""
 msgid "Error getting learner information."
 msgstr ""
 
-#: openassessment/xblock/staff_area_mixin.py:217
+#: openassessment/xblock/staff_area_mixin.py:216
 msgid "Error loading the checked out learner response."
 msgstr ""
 
-#: openassessment/xblock/staff_area_mixin.py:219
+#: openassessment/xblock/staff_area_mixin.py:217
 msgid "No other learner responses are available for grading at this time."
 msgstr "Δεν υπάρχουν αυτή τη στιγμή άλλες εργασίες συμφοιτητών σας διαθέσιμες προς αξιολόγηση"
 
-#: openassessment/xblock/staff_area_mixin.py:222
+#: openassessment/xblock/staff_area_mixin.py:219
 msgid "Error getting staff grade information."
 msgstr ""
 
-#: openassessment/xblock/staff_area_mixin.py:243
+#: openassessment/xblock/staff_area_mixin.py:240
 msgid "Error getting staff grade ungraded and checked out counts."
 msgstr ""
 
-#: openassessment/xblock/staff_area_mixin.py:450
+#: openassessment/xblock/staff_area_mixin.py:466
 msgid "Please enter valid reason to remove the submission."
 msgstr ""
 
-#: openassessment/xblock/staff_area_mixin.py:476
+#: openassessment/xblock/staff_area_mixin.py:492
 msgid ""
 "The learner submission has been removed from peer assessment. The learner "
 "receives a grade of zero unless you delete the learner's state for the "
 "problem to allow them to resubmit a response."
 msgstr ""
 
-#: openassessment/xblock/staff_assessment_mixin.py:39
+#: openassessment/xblock/staff_assessment_mixin.py:40
 msgid "The submission ID of the submission being assessed was not found."
 msgstr ""
 
-#: openassessment/xblock/staff_assessment_mixin.py:65
-#: openassessment/xblock/staff_assessment_mixin.py:72
+#: openassessment/xblock/staff_assessment_mixin.py:66
+#: openassessment/xblock/staff_assessment_mixin.py:73
 msgid "Your staff assessment could not be submitted."
 msgstr "Η υποβολή της αξιολόγησης μέλους της ομάδας διδασκόντων δεν ήταν εφικτή"
 
-#: openassessment/xblock/staff_assessment_mixin.py:124
-msgid "Waiting for a Staff Grade"
-msgstr ""
-
 #: openassessment/xblock/staff_assessment_mixin.py:125
+msgid "Waiting for a Staff Grade"
+msgstr "Περιμένετε τον βαθμό του διδάσκοντα"
+
+#: openassessment/xblock/staff_assessment_mixin.py:126
 msgid ""
 "Check back later to see if a course staff member has assessed your response."
 " You will receive your grade after the assessment is complete."
 msgstr "Επιστρέψτε στη σελίδα της αλληλοαξιολόγησης λίγο αργότερα για να δείτε αν κάποιο από τα μέλη της ομάδας διδασκόντων έχει αξιολογήσει την εργασία σας. Θα λάβετε το βαθμό σας αφού ολοκληρωθεί η αξιολόγηση."
 
-#: openassessment/xblock/staff_assessment_mixin.py:136
+#: openassessment/xblock/staff_assessment_mixin.py:139
 msgid "You Must Complete the Steps Above to View Your Grade"
 msgstr ""
 
-#: openassessment/xblock/staff_assessment_mixin.py:137
+#: openassessment/xblock/staff_assessment_mixin.py:140
 msgid ""
 "Although a course staff member has assessed your response, you will receive "
 "your grade only after you have completed all the required steps of this "
 "problem."
 msgstr "Μολονότι η εργασία σας έχει αξιολογηθεί από μέλος της ομάδας διδασκόντων, θα λάβετε το βαθμό σας μόνο αφού συμπληρώσετε όλα τα απαιτούμενα βήματα της διαδικασίας αλληλοαξιολόγησης."
 
-#: openassessment/xblock/student_training_mixin.py:227
+#: openassessment/xblock/student_training_mixin.py:228
 msgid "Missing options_selected key in request"
 msgstr ""
 
-#: openassessment/xblock/student_training_mixin.py:229
+#: openassessment/xblock/student_training_mixin.py:230
 msgid "options_selected must be a dictionary"
 msgstr ""
 
-#: openassessment/xblock/student_training_mixin.py:254
-#: openassessment/xblock/student_training_mixin.py:259
+#: openassessment/xblock/student_training_mixin.py:255
+#: openassessment/xblock/student_training_mixin.py:260
 msgid "Your scores could not be checked."
 msgstr ""
 
-#: openassessment/xblock/studio_mixin.py:182
-#: openassessment/xblock/studio_mixin.py:194
+#: openassessment/xblock/studio_mixin.py:195
+#: openassessment/xblock/studio_mixin.py:207
 msgid "Error updating XBlock configuration"
 msgstr ""
 
-#: openassessment/xblock/studio_mixin.py:197
+#: openassessment/xblock/studio_mixin.py:210
 msgid "Error: both text and file upload responses can't be disabled"
 msgstr ""
 
-#: openassessment/xblock/studio_mixin.py:200
+#: openassessment/xblock/studio_mixin.py:213
 msgid ""
 "Error: in case if text response is disabled file upload response must be "
 "required"
 msgstr ""
 
-#: openassessment/xblock/studio_mixin.py:203
+#: openassessment/xblock/studio_mixin.py:216
 msgid ""
 "Error: in case if file upload response is disabled text response must be "
 "required"
 msgstr ""
 
-#: openassessment/xblock/studio_mixin.py:227
+#: openassessment/xblock/studio_mixin.py:240
 #, python-brace-format
 msgid "Validation error: {error}"
 msgstr ""
 
-#: openassessment/xblock/studio_mixin.py:253
+#: openassessment/xblock/studio_mixin.py:268
 msgid "Successfully updated OpenAssessment XBlock"
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:77
+#: openassessment/xblock/submission_mixin.py:94
 msgid "\"submission\" required to submit answer."
 msgstr "Πατήστε \"Υποβολή\" για να υποβάλετε την εργασία σας"
 
-#: openassessment/xblock/submission_mixin.py:98
+#: openassessment/xblock/submission_mixin.py:115
 msgid "To submit a response, view this component in Preview or Live mode."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:104
+#: openassessment/xblock/submission_mixin.py:121
 msgid "Multiple submissions are not allowed."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:147
+#: openassessment/xblock/submission_mixin.py:167
 msgid "API returned unclassified exception."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:189
+#: openassessment/xblock/submission_mixin.py:218
 msgid "This response could not be saved."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:193
+#: openassessment/xblock/submission_mixin.py:222
 msgid "This response was not submitted."
 msgstr "Δεν έχετε υποβάλει την εργασία σας"
 
-#: openassessment/xblock/submission_mixin.py:222
-msgid "Files descriptions could not be saved."
-msgstr ""
-
-#: openassessment/xblock/submission_mixin.py:226
+#: openassessment/xblock/submission_mixin.py:238
 msgid "Files descriptions were not submitted."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:290
+#: openassessment/xblock/submission_mixin.py:275
+msgid "Files metadata could not be saved."
+msgstr ""
+
+#: openassessment/xblock/submission_mixin.py:376
 msgid "There was an error uploading your file."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:298
+#: openassessment/xblock/submission_mixin.py:385
 msgid "Content type must be GIF, PNG or JPG."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:301
+#: openassessment/xblock/submission_mixin.py:388
 msgid "Content type must be PDF, GIF, PNG or JPG."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:304
+#: openassessment/xblock/submission_mixin.py:391
 msgid "File type must be one of the following types: {}"
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:308
+#: openassessment/xblock/submission_mixin.py:395
 msgid "File type is not allowed."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:315
+#: openassessment/xblock/submission_mixin.py:402
 msgid "Error retrieving upload URL."
 msgstr ""
 
-#: openassessment/xblock/submission_mixin.py:455
+#: openassessment/xblock/submission_mixin.py:629
 msgid "This response has been saved but not submitted."
 msgstr "Η ΕΡΓΑΣΙΑ ΣΑΣ ΕΧΕΙ ΑΠΟΘΗΚΕΥΤΕΙ ΑΛΛΑ ΔΕΝ ΕΧΕΙ ΥΠΟΒΛΗΘΕΙ."
 
-#: openassessment/xblock/submission_mixin.py:456
+#: openassessment/xblock/submission_mixin.py:630
 msgid "This response has not been saved."
 msgstr "ΔΕΝ ΕΧΕΤΕ ΑΠΟΘΗΚΕΥΣΕΙ ΤΗΝ ΕΡΓΑΣΙΑ ΣΑΣ."
 
-#: openassessment/xblock/validation.py:116
+#: openassessment/xblock/validation.py:121
 msgid "This problem must include at least one assessment."
 msgstr ""
 
-#: openassessment/xblock/validation.py:120
+#: openassessment/xblock/validation.py:125
 msgid "The assessment order you selected is invalid."
 msgstr ""
 
-#: openassessment/xblock/validation.py:130
+#: openassessment/xblock/validation.py:135
 msgid "In peer assessment, the \"Must Grade\" value must be a positive integer."
 msgstr ""
 
-#: openassessment/xblock/validation.py:133
+#: openassessment/xblock/validation.py:138
 msgid "In peer assessment, the \"Graded By\" value must be a positive integer."
 msgstr ""
 
-#: openassessment/xblock/validation.py:137
+#: openassessment/xblock/validation.py:142
 msgid ""
 "In peer assessment, the \"Must Grade\" value must be greater than or equal "
 "to the \"Graded By\" value."
 msgstr ""
 
-#: openassessment/xblock/validation.py:146
+#: openassessment/xblock/validation.py:151
 msgid "You must provide at least one example response for learner training."
 msgstr ""
 
-#: openassessment/xblock/validation.py:149
+#: openassessment/xblock/validation.py:154
 msgid "Each example response for learner training must be unique."
 msgstr ""
 
-#: openassessment/xblock/validation.py:156
+#: openassessment/xblock/validation.py:161
 msgid "The \"required\" value must be true if staff assessment is the only step."
 msgstr ""
 
-#: openassessment/xblock/validation.py:160
+#: openassessment/xblock/validation.py:165
 msgid ""
 "The number of assessments cannot be changed after the problem has been "
 "released."
 msgstr ""
 
-#: openassessment/xblock/validation.py:165
+#: openassessment/xblock/validation.py:170
 msgid ""
 "The assessment type cannot be changed after the problem has been released."
 msgstr ""
 
-#: openassessment/xblock/validation.py:188
+#: openassessment/xblock/validation.py:193
 msgid "This rubric definition is not valid."
 msgstr ""
 
-#: openassessment/xblock/validation.py:194
+#: openassessment/xblock/validation.py:199
 #, python-brace-format
 msgid "Options in '{criterion}' have duplicate name(s): {duplicates}"
 msgstr ""
 
-#: openassessment/xblock/validation.py:202
+#: openassessment/xblock/validation.py:207
 msgid "Criteria with no options must require written feedback."
 msgstr ""
 
-#: openassessment/xblock/validation.py:211
+#: openassessment/xblock/validation.py:216
 msgid "Prompts cannot be created or deleted after a problem is released."
 msgstr ""
 
-#: openassessment/xblock/validation.py:215
+#: openassessment/xblock/validation.py:220
 msgid "The number of criteria cannot be changed after a problem is released."
 msgstr "Ο αριθμός των κριτηρίων δεν μπορεί να αλλάξει εφόσον ένα πρόβλημα δημοσιευθεί."
 
-#: openassessment/xblock/validation.py:228
+#: openassessment/xblock/validation.py:233
 msgid "Criteria names cannot be changed after a problem is released"
 msgstr "Τα ονόματα των κριτηρίων δεν μπορούν να αλλάξουν εφόσον ένα πρόβλημα δημοσιευθεί."
 
-#: openassessment/xblock/validation.py:233
+#: openassessment/xblock/validation.py:238
 msgid "The number of options cannot be changed after a problem is released."
 msgstr "Ο αριθμός των επιλογών δε μπορεί να αλλάξει εφόσον ένα πρόβλημα δημοσιευθεί."
 
-#: openassessment/xblock/validation.py:238
+#: openassessment/xblock/validation.py:243
 msgid "Point values cannot be changed after a problem is released."
 msgstr ""
 
-#: openassessment/xblock/validation.py:289
+#: openassessment/xblock/validation.py:294
 msgid "Learner training must have at least one training example."
 msgstr ""
 
-#: openassessment/xblock/validation.py:353
+#: openassessment/xblock/validation.py:359
 msgid "Leaderboard number is invalid."
 msgstr ""
 
-#: openassessment/xblock/validation.py:376
+#: openassessment/xblock/validation.py:382
 msgid "The submission format is invalid."
 msgstr ""

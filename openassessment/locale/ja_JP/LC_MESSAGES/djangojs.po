@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-29 13:04-0400\n"
-"PO-Revision-Date: 2018-03-30 01:11+0000\n"
-"Last-Translator: Toshiboumi Ohta <ohta@securesky-tech.com>\n"
+"POT-Creation-Date: 2020-02-20 13:05-0500\n"
+"PO-Revision-Date: 2020-02-21 19:13+0000\n"
+"Last-Translator: Ned Batchelder <ned@edx.org>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/open-edx/edx-platform/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,239 +78,261 @@ msgstr "スケジュール変更タスク失敗。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/oa_server.js:460
+#: openassessment/xblock/static/js/src/oa_server.js:464
 msgid "This problem could not be saved."
 msgstr "この問題は保存できませんでした。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/oa_server.js:482
+#: openassessment/xblock/static/js/src/oa_server.js:486
 msgid "The server could not be contacted."
 msgstr "サーバーに接続できませんでした。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/oa_server.js:509
+#: openassessment/xblock/static/js/src/oa_server.js:513
 msgid "Could not retrieve upload url."
 msgstr "アップロードURLが復旧できませんでした。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/oa_server.js:529
-#: openassessment/xblock/static/js/src/oa_server.js:549
+#: openassessment/xblock/static/js/src/oa_server.js:533
+#: openassessment/xblock/static/js/src/oa_server.js:553
 msgid "Server error."
 msgstr "サーバーエラー。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/oa_server.js:570
+#: openassessment/xblock/static/js/src/oa_server.js:574
 msgid "Could not retrieve download url."
 msgstr "ダウンロードURLが復旧できませんでした。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/oa_server.js:596
+#: openassessment/xblock/static/js/src/oa_server.js:600
 msgid "The submission could not be removed from the grading pool."
 msgstr "提出物を採点プールから削除できませんでした。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_base.js:324
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/oa_server.js:656
+msgid "Multiple teams returned for course"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-lms.min.js:1
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/oa_server.js:665
+msgid "Could not load teams information."
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-lms.min.js:1
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/oa_server.js:687
+msgid "User lookup failed"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-lms.min.js:1
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/oa_server.js:693
+msgid "Error when looking up username"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-lms.min.js:1
+#: openassessment/xblock/static/js/src/lms/oa_base.js:321
 msgid "Unable to load"
 msgstr "読み込めません"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:48
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:51
 msgid "Unit Name"
 msgstr "ユニット名"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:48
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:51
 msgid "Units"
 msgstr "ユニット"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:52
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:55
 msgid "Assessment"
 msgstr "アセスメント"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:52
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:55
 msgid "Assessments"
 msgstr "アセスメント"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:56
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:59
 msgid "Total Responses"
 msgstr "総返信数"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:60
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:63
 msgid "Training"
 msgstr "トレーニング"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:64
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:67
 msgid "Peer"
 msgstr "ピア"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:68
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:71
 msgid "Self"
 msgstr "セルフ"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:72
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:75
 msgid "Waiting"
 msgstr "待機中"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:76
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:79
 msgid "Staff"
 msgstr "スタッフ"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:81
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:82
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:84
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:85
 msgid "Final Grade Received"
 msgstr "最終成績受取済"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:111
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:115
 msgid "List of Open Assessments is unavailable"
 msgstr "オープン・アセスメントのリストはありません"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:212
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:262
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:215
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:266
 msgid "Please wait"
 msgstr "お待ちください"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:235
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:239
 msgid "Block view is unavailable"
 msgstr "ブロック・ビューは不可"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:247
+#: openassessment/xblock/static/js/src/lms/oa_course_items_listing.js:251
 msgid "Back to Full List"
 msgstr "全リストへ戻る"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_peer.js:193
+#: openassessment/xblock/static/js/src/lms/oa_peer.js:190
 msgid ""
 "If you leave this page without submitting your peer assessment, you will "
 "lose any work you have done."
 msgstr "ピア・アセスメントを提出せずに別のページへ移動する場合、記述した内容が失われます。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:130
-msgid ""
-"After you upload new files all your previously uploaded files will be "
-"overwritten. Continue?"
-msgstr "新規ファイルをアップロードすると、以前アップロードしたファイルがすべて上書きされます。続けますか？"
-
-#: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:283
+#: openassessment/xblock/static/js/src/lms/oa_response.js:310
 msgid "Your file "
 msgstr ""
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:307
+#: openassessment/xblock/static/js/src/lms/oa_response.js:334
 msgid "Status of Your Response"
 msgstr "あなたの返信のステータス"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:382
+#: openassessment/xblock/static/js/src/lms/oa_response.js:408
 msgid "This response has not been saved."
 msgstr "この返信は保存されていません。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:386
+#: openassessment/xblock/static/js/src/lms/oa_response.js:413
 msgid ""
 "If you leave this page without saving or submitting your response, you will "
 "lose any work you have done on the response."
 msgstr "返信を保存または提出せずに別のページへ移動する場合、記述した内容が失われます。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:404
+#: openassessment/xblock/static/js/src/lms/oa_response.js:431
 msgid "Saving..."
 msgstr "保存中..."
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:426
+#: openassessment/xblock/static/js/src/lms/oa_response.js:453
 msgid "This response has been saved but not submitted."
 msgstr "この返信は保存されていますが、提出はされていません。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:431
+#: openassessment/xblock/static/js/src/lms/oa_response.js:458
 msgid "Error"
 msgstr "エラー"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:457
+#: openassessment/xblock/static/js/src/lms/oa_response.js:484
 msgid "Do you want to upload your file before submitting?"
 msgstr "提出前にファイルをアップロードしますか？"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:533
+#: openassessment/xblock/static/js/src/lms/oa_response.js:560
 msgid ""
 "You're about to submit your response for this assignment. After you submit "
 "this response, you can't change it or submit a new response."
 msgstr "この課題に関する返信を提出しようとしています。返信を提出した後は、変更したり新しい返信を提出することはできません。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:574
-msgid "File size must be 10MB or less."
-msgstr "ファイルサイズは10MBを超えてはいけません。"
+#: openassessment/xblock/static/js/src/lms/oa_response.js:597
+msgid "Individual file size must be {max_files_mb}MB or less."
+msgstr ""
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:581
-#: openassessment/xblock/static/js/src/lms/oa_response.js:588
-#: openassessment/xblock/static/js/src/lms/oa_response.js:595
+#: openassessment/xblock/static/js/src/lms/oa_response.js:607
+#: openassessment/xblock/static/js/src/lms/oa_response.js:614
+#: openassessment/xblock/static/js/src/lms/oa_response.js:621
 msgid "You can upload files with these file types: "
 msgstr "次に示すファイルタイプであればアップロードできます: "
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:603
+#: openassessment/xblock/static/js/src/lms/oa_response.js:629
 msgid "File type is not allowed."
 msgstr "ファイルタイプが不正です。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:647
-#: openassessment/xblock/static/js/src/lms/oa_response.js:653
+#: openassessment/xblock/static/js/src/lms/oa_response.js:637
+msgid "Only "
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-lms.min.js:1
+#: openassessment/xblock/static/js/src/lms/oa_response.js:683
+#: openassessment/xblock/static/js/src/lms/oa_response.js:689
 msgid "Describe "
 msgstr "記述する"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:647
+#: openassessment/xblock/static/js/src/lms/oa_response.js:683
 msgid "(required):"
 msgstr "(必須): "
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_response.js:667
+#: openassessment/xblock/static/js/src/lms/oa_response.js:703
 msgid "Thumbnail view of "
 msgstr "サムネイル・ビュー"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_self.js:124
+#: openassessment/xblock/static/js/src/lms/oa_self.js:123
 msgid ""
 "If you leave this page without submitting your self assessment, you will "
 "lose any work you have done."
 msgstr "セルフ・アセスメントを提出せずに別のページへ移動すると、記述した内容が失われます。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:129
-#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:211
+#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:131
+#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:213
 msgid "Unexpected server error."
 msgstr "予期しないサーバーエラー。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:133
+#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:135
 msgid "You must provide a learner name."
 msgstr "受講者名を指定して下さい。"
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
-#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:263
+#: openassessment/xblock/static/js/src/lms/oa_staff_area.js:264
 msgid "Error getting the number of ungraded responses"
 msgstr "採点対象外の返信数の取得エラー"
 
@@ -325,36 +347,6 @@ msgstr "スタッフ・アセスメントを提出せずに別のページへ移
 #: openassessment/xblock/static/js/src/lms/oa_training.js:116
 msgid "Feedback available for selection."
 msgstr "選択に対するフィードバックがご覧いただけます。"
-
-#: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit.js:391
-msgid "Paragraph"
-msgstr ""
-
-#: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit.js:392
-msgid "Preformatted"
-msgstr ""
-
-#: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit.js:393
-msgid "Heading 3"
-msgstr ""
-
-#: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit.js:394
-msgid "Heading 4"
-msgstr ""
-
-#: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit.js:395
-msgid "Heading 5"
-msgstr ""
-
-#: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit.js:396
-msgid "Heading 6"
-msgstr ""
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
 #: openassessment/xblock/static/js/src/studio/oa_container_item.js:39
@@ -377,11 +369,41 @@ msgid "Please correct the outlined fields."
 msgstr "縁取られた欄を正しく入力してください。"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit.js:180
+#: openassessment/xblock/static/js/src/studio/oa_edit.js:178
 msgid ""
 "This problem has already been released. Any changes will apply only to "
 "future assessments."
 msgstr "この問題は既に公開済みのため、変更は今後のアセスメントのみに適用されます。"
+
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/studio/oa_edit.js:392
+msgid "Paragraph"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/studio/oa_edit.js:393
+msgid "Preformatted"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/studio/oa_edit.js:394
+msgid "Heading 3"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/studio/oa_edit.js:395
+msgid "Heading 4"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/studio/oa_edit.js:396
+msgid "Heading 5"
+msgstr ""
+
+#: openassessment/xblock/static/js/openassessment-studio.min.js:1
+#: openassessment/xblock/static/js/src/studio/oa_edit.js:397
+msgid "Heading 6"
+msgstr ""
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
 #: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:97
@@ -389,20 +411,20 @@ msgid "Criterion Added"
 msgstr "評価基準追加済"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:98
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:99
 msgid ""
 "You have added a criterion. You will need to select an option for the "
 "criterion in the Learner Training step. To do this, click the Settings tab."
 msgstr "評価基準を追加しました。受講者トレーニングの評価基準の選択肢を選択してください。選択するには設定タブをクリックしてください。"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:144
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:179
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:145
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:181
 msgid "Option Deleted"
 msgstr "選択肢削除済"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:145
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:147
 msgid ""
 "You have deleted an option. That option has been removed from its criterion "
 "in the sample responses in the Learner Training step. You might have to "
@@ -410,42 +432,48 @@ msgid ""
 msgstr "選択肢を削除しました。受講者トレーニングの解答例にある評価基準から、この選択肢が削除されました。必要に応じて新しい選択肢を選択してください。"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:180
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:183
 msgid ""
 "You have deleted all the options for this criterion. The criterion has been "
 "removed from the sample responses in the Learner Training step."
 msgstr "この評価基準の全ての選択肢を削除しました。受講者トレーニングの解答例から、この評価基準が削除されました。"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:206
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:209
 msgid "Criterion Deleted"
 msgstr "評価基準削除済"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:207
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:211
 msgid ""
 "You have deleted a criterion. The criterion has been removed from the "
 "example responses in the Learner Training step."
 msgstr "評価基準を削除しました。受講者トレーニングの解答例から評価基準が削除されました。"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:376
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:380
 msgid "Warning"
 msgstr "警告"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:377
+#: openassessment/xblock/static/js/src/studio/oa_edit_listeners.js:381
 msgid ""
 "Changes to steps that are not selected as part of the assignment will not be"
 " saved."
 msgstr "課題の一部として選択されていないステップの変更は保存されません。"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_settings.js:66
+#: openassessment/xblock/static/js/src/studio/oa_edit_settings.js:90
 msgid "File types can not be empty."
 msgstr "ファイルタイプを指定してください。"
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
-#: openassessment/xblock/static/js/src/studio/oa_edit_settings.js:76
+#: openassessment/xblock/static/js/src/studio/oa_edit_settings.js:100
 msgid "The following file types are not allowed: "
 msgstr "次に示すファイルタイプは不正です："
+
+#: openassessment/xblock/static/js/src/lms/oa_response.js:803
+msgid ""
+"Are you sure you want to delete the following file? It cannot be restored.\n"
+"File: "
+msgstr ""

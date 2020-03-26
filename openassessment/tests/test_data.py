@@ -2,12 +2,18 @@
 """
 Tests for openassessment data aggregation.
 """
+from __future__ import absolute_import, print_function
 
-from StringIO import StringIO
+from collections import OrderedDict
 import csv
 import os.path
+from StringIO import StringIO
 
 import ddt
+from freezegun import freeze_time
+from mock import Mock
+import six
+from six.moves import range, zip
 
 from django.core.management import call_command
 
@@ -235,17 +241,26 @@ class TestOraAggregateData(TransactionCacheResetTest):
     Test the component parts of OraAggregateData
     """
 
-    def _build_criteria_and_assessment_parts(self, num_criteria=1, feedback=""):
+    @classmethod
+    def build_criteria_and_assessment_parts(cls, num_criteria=1, feedback="",
+                                            assessment_options=None, criterion_options=None):
         """ Build a set of criteria and assessment parts for the rubric. """
-        rubric = RubricFactory()
-        criteria = [CriterionFactory(rubric=rubric, order_num=n-1) for n in range(num_criteria)]
+        if criterion_options:
+            # Extract the criteria and rubric from the options, if provided.
+            criteria = [option.criterion for option in criterion_options]
+            rubric = criteria[0].rubric
+        else:
+            # Generate the rubric, criteria, and options
+            rubric = RubricFactory()
+            criteria = [CriterionFactory(rubric=rubric, order_num=n + 1) for n in range(num_criteria)]
+            criterion_options = []
+            for criterion in criteria:
+                criterion_options.append(CriterionOptionFactory(criterion=criterion))
 
-        criterion_options = []
-        # for every criterion, make a criterion option
-        for criterion in criteria:
-            criterion_options.append(CriterionOptionFactory(criterion=criterion))
+        assessment_options = assessment_options or {}
 
-        assessment = AssessmentFactory(rubric=rubric, feedback=feedback)
+        assessment_data = dict(rubric=rubric, feedback=feedback, **assessment_options)
+        assessment = AssessmentFactory(**assessment_data)
         for criterion, option in zip(criteria, criterion_options):
             AssessmentPartFactory(assessment=assessment, criterion=criterion, option=option, feedback=feedback)
         return assessment
@@ -264,7 +279,7 @@ class TestOraAggregateData(TransactionCacheResetTest):
 
     def test_build_assessments_cell(self):
         # One assessment
-        assessment1 = self._build_criteria_and_assessment_parts()
+        assessment1 = self.build_criteria_and_assessment_parts()
 
         # pylint: disable=protected-access
         assessment_cell = OraAggregateData._build_assessments_cell([assessment1])
@@ -273,7 +288,7 @@ class TestOraAggregateData(TransactionCacheResetTest):
         self.assertEqual(assessment_cell, a1_cell)
 
         # Multiple assessments
-        assessment2 = self._build_criteria_and_assessment_parts(feedback="Test feedback")
+        assessment2 = self.build_criteria_and_assessment_parts(feedback="Test feedback")
 
         # pylint: disable=protected-access
         assessment_cell = OraAggregateData._build_assessments_cell([assessment1, assessment2])
@@ -295,8 +310,8 @@ class TestOraAggregateData(TransactionCacheResetTest):
         return cell
 
     def test_build_assessments_parts_cell(self):
-        assessment1 = self._build_criteria_and_assessment_parts()
-        a1_cell = "Assessment #{}\n".format(assessment1.id)  # pylint: disable=no-member
+        assessment1 = self.build_criteria_and_assessment_parts()
+        a1_cell = u"Assessment #{}\n".format(assessment1.id)
 
         for part in assessment1.parts.all():  # pylint: disable=no-member
             a1_cell += self._assessment_part_cell(part)
@@ -306,8 +321,8 @@ class TestOraAggregateData(TransactionCacheResetTest):
         self.assertEqual(a1_cell, assessment_part_cell)
 
         # Second assessment with 2 component parts and individual option feedback
-        assessment2 = self._build_criteria_and_assessment_parts(num_criteria=2, feedback="Test feedback")
-        a2_cell = "Assessment #{}\n".format(assessment2.id)  # pylint: disable=no-member
+        assessment2 = self.build_criteria_and_assessment_parts(num_criteria=2, feedback="Test feedback")
+        a2_cell = u"Assessment #{}\n".format(assessment2.id)
 
         for part in assessment2.parts.all():  # pylint: disable=no-member
             a2_cell += self._assessment_part_cell(part, feedback="Test feedback")
@@ -560,3 +575,135 @@ class TestOraAggregateDataIntegration(TransactionCacheResetTest):
         self.assertEqual(data[ITEM_ID], {'total': 2, 'peer': 2, 'staff': 0})
         self.assertEqual(data[item_id2], {'total': 1, 'peer': 1, 'staff': 0})
         self.assertEqual(data[item_id3], {'total': 1, 'peer': 1, 'staff': 0})
+
+    def test_generate_assessment_data_no_submission(self):
+        user_state = Mock()
+        user_state.username = 'test_student_1'
+
+        rows = list(OraAggregateData.generate_assessment_data('block_id_goes_here'))
+        self.assertEqual(rows, [OrderedDict([
+            ('Item ID', 'block_id_goes_here'),
+            ('Submission ID', ''),
+        ])])
+
+    @freeze_time("2020-01-01 12:23:34")
+    def test_generate_assessment_data(self):
+        # Create a submission with many assessments and a final score.
+        submission = self._create_submission(STUDENT_ITEM)
+        submission_uuid = submission['uuid']
+
+        rubric = RubricFactory()
+        criteria = [CriterionFactory(rubric=rubric,
+                                     order_num=n + 1,
+                                     name='Criteria {}'.format(n),
+                                     label='label_{}'.format(n))
+                    for n in range(2)]
+
+        assessments = []
+        for index in range(1, 4):
+            criterion_options = [
+                CriterionOptionFactory(criterion=criterion,
+                                       points=index,
+                                       name='Option {}'.format(n),
+                                       label='option_{}'.format(n))
+                for (n, criterion) in enumerate(criteria)
+            ]
+            assessment = TestOraAggregateData.build_criteria_and_assessment_parts(
+                feedback='feedback for {}'.format(STUDENT_ITEM['student_id']),
+                assessment_options={
+                    'submission_uuid': submission_uuid,
+                    'scorer_id': 'test_scorer_{}'.format(index),
+                },
+                criterion_options=criterion_options,
+            )
+            assessments.append(assessment)
+
+        sub_api.set_score(submission_uuid, 9, 10)
+        peer_api.get_score(submission_uuid, {'must_be_graded_by': 1, 'must_grade': 0})
+        self._create_assessment_feedback(submission_uuid)
+
+        # Generate the assessment report
+        rows = []
+        for row in OraAggregateData.generate_assessment_data('block_id_goes_here', submission_uuid):
+            rows.append(row)
+
+        self.assertEqual([
+            OrderedDict([
+                ('Item ID', 'block_id_goes_here'),
+                ('Submission ID', assessments[2].submission_uuid),
+                ('Anonymized Student ID', 'Student'),
+                ('Assessment ID', assessments[2].id),
+                ('Assessment Scored Date', '2020-01-01'),
+                ('Assessment Scored Time', '12:23:34'),
+                ('Assessment Type', 'PE'),
+                ('Anonymous Scorer Id', 'test_scorer_3'),
+                ('Criterion 1: label_0', 'option_0'),
+                ('Points 1', 3),
+                ('Median Score 1', 2),
+                ('Feedback 1', 'feedback for Student'),
+                ('Criterion 2: label_1', 'option_1'),
+                ('Points 2', 3),
+                ('Median Score 2', 2),
+                ('Feedback 2', 'feedback for Student'),
+                ('Overall Feedback', 'feedback for Student'),
+                ('Assessment Scored At', '2020-01-01 12:23:34'),
+                ('Date/Time Final Score Given', '2020-01-01 12:23:34'),
+                ('Final Score Earned', 9),
+                ('Final Score Possible', 10),
+                ('Feedback Statements Selected', ''),
+                ('Feedback on Assessment', "𝓨𝓸𝓾 𝓼𝓱𝓸𝓾𝓵𝓭𝓷'𝓽 𝓰𝓲𝓿𝓮 𝓾𝓹!"),
+                ('Response Files', ''),
+            ]),
+            OrderedDict([
+                ('Item ID', 'block_id_goes_here'),
+                ('Submission ID', assessments[1].submission_uuid),
+                ('Anonymized Student ID', 'Student'),
+                ('Assessment ID', assessments[1].id),
+                ('Assessment Scored Date', '2020-01-01'),
+                ('Assessment Scored Time', '12:23:34'),
+                ('Assessment Type', 'PE'),
+                ('Anonymous Scorer Id', 'test_scorer_2'),
+                ('Criterion 1: label_0', 'option_0'),
+                ('Points 1', 2),
+                ('Median Score 1', 2),
+                ('Feedback 1', 'feedback for Student'),
+                ('Criterion 2: label_1', 'option_1'),
+                ('Points 2', 2),
+                ('Median Score 2', 2),
+                ('Feedback 2', 'feedback for Student'),
+                ('Overall Feedback', 'feedback for Student'),
+                ('Assessment Scored At', '2020-01-01 12:23:34'),
+                ('Date/Time Final Score Given', '2020-01-01 12:23:34'),
+                ('Final Score Earned', 9),
+                ('Final Score Possible', 10),
+                ('Feedback Statements Selected', ''),
+                ('Feedback on Assessment', "𝓨𝓸𝓾 𝓼𝓱𝓸𝓾𝓵𝓭𝓷'𝓽 𝓰𝓲𝓿𝓮 𝓾𝓹!"),
+                ('Response Files', ''),
+            ]),
+            OrderedDict([
+                ('Item ID', 'block_id_goes_here'),
+                ('Submission ID', assessments[0].submission_uuid),
+                ('Anonymized Student ID', 'Student'),
+                ('Assessment ID', assessments[0].id),
+                ('Assessment Scored Date', '2020-01-01'),
+                ('Assessment Scored Time', '12:23:34'),
+                ('Assessment Type', 'PE'),
+                ('Anonymous Scorer Id', 'test_scorer_1'),
+                ('Criterion 1: label_0', 'option_0'),
+                ('Points 1', 1),
+                ('Median Score 1', 2),
+                ('Feedback 1', 'feedback for Student'),
+                ('Criterion 2: label_1', 'option_1'),
+                ('Points 2', 1),
+                ('Median Score 2', 2),
+                ('Feedback 2', 'feedback for Student'),
+                ('Overall Feedback', 'feedback for Student'),
+                ('Assessment Scored At', '2020-01-01 12:23:34'),
+                ('Date/Time Final Score Given', '2020-01-01 12:23:34'),
+                ('Final Score Earned', 9),
+                ('Final Score Possible', 10),
+                ('Feedback Statements Selected', ''),
+                ('Feedback on Assessment', "𝓨𝓸𝓾 𝓼𝓱𝓸𝓾𝓵𝓭𝓷'𝓽 𝓰𝓲𝓿𝓮 𝓾𝓹!"),
+                ('Response Files', ''),
+            ]),
+        ], rows)

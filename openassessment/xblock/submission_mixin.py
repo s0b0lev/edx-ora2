@@ -373,7 +373,8 @@ class SubmissionMixin(object):
                 **student_item_dict
             )
 
-    def _get_url_by_file_key(self, key):
+    @classmethod
+    def _get_url_by_file_key(cls, key):
         """
         Return download url for some particular file key.
 
@@ -386,7 +387,8 @@ class SubmissionMixin(object):
             logger.exception("Unable to generate download url for file key {}".format(key))
         return url
 
-    def get_download_urls_from_submission(self, submission):
+    @classmethod
+    def get_download_urls_from_submission(cls, submission):
         """
         Returns a download URLs for retrieving content within a submission.
 
@@ -406,7 +408,7 @@ class SubmissionMixin(object):
             file_keys = submission['answer'].get('file_keys', [])
             descriptions = submission['answer'].get('files_descriptions', [])
             for idx, key in enumerate(file_keys):
-                file_download_url = self._get_url_by_file_key(key)
+                file_download_url = cls._get_url_by_file_key(key)
                 if file_download_url:
                     file_description = descriptions[idx].strip() if idx < len(descriptions) else ''
                     urls.append((file_download_url, file_description))
@@ -414,7 +416,7 @@ class SubmissionMixin(object):
                     break
         elif 'file_key' in submission['answer']:
             key = submission['answer'].get('file_key', '')
-            file_download_url = self._get_url_by_file_key(key)
+            file_download_url = cls._get_url_by_file_key(key)
             if file_download_url:
                 urls.append((file_download_url, ''))
         return urls
