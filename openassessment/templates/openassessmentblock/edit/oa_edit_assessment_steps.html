@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load tz %}
+<div id="oa_assessment_steps_editor_wrapper" class="oa_editor_content_wrapper wrapper-comp-settings">
+    <div id="openassessment_step_select_description" class="openassessment_tab_instructions">
+        <p class="openassessment_description">
+            {% trans "Open Response Assessments allow you to configure single or multiple steps in a rubric based open response assessment sequence. The steps available below can be enabled, disable, and ordered for a flexible set of pedagogical needs." %}
+        </p>
+    </div>
+    <div class="openassessment_description_heading">
+        {% trans "Step Selection and Ordering" %}
+    </div>
+
+    <ol id="openassessment_assessment_module_settings_editors">
+        {% include "openassessmentblock/edit/oa_edit_student_training.html" %}
+        {% include "openassessmentblock/edit/oa_edit_peer_assessment.html" %}
+        {% include "openassessmentblock/edit/oa_edit_self_assessment.html" %}
+        {% include "openassessmentblock/edit/oa_edit_staff_assessment.html" %}
+    </ol>
+</div>
