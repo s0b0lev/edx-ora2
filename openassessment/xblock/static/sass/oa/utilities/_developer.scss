@@ -268,16 +268,12 @@
 
     .editor_tabs {
 
-      width: 35%;
-      min-width: 190px;
-      max-width: 360px;
-      @include float(right);
+      display: flex;
+      justify-content: flex-end;
 
       .oa_editor_tab {
-        @include float(right);
-        padding: 0;
-        width: 29%;
-        margin: 0px 2%;
+        padding: 0 10px;
+        margin: 0px 1%;
         height: 35px;
         @include border-radius(5px);
         box-shadow: none;
