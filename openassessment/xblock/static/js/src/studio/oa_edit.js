@@ -37,11 +37,19 @@ OpenAssessment.StudioView = function(runtime, element, server, data) {
         ])
     );
 
+    // Initialize the rubric tab view
+    this.rubricView = new OpenAssessment.EditRubricView(
+        $('#oa_rubric_editor_wrapper', this.element).get(0),
+        new OpenAssessment.Notifier([
+            studentTrainingListener,
+        ])
+    );
+
     this.scheduleView = new OpenAssessment.EditScheduleView(
         $('#oa_schedule_editor_wrapper', this.element).get(0)
     );
 
-    // Initialize the settings tab view
+    // Initialize the settings and assessments steps tab views
     var staffAssessmentView = new OpenAssessment.EditStaffAssessmentView(
         $('#oa_staff_assessment_editor', this.element).get(0)
     );
@@ -60,16 +68,12 @@ OpenAssessment.StudioView = function(runtime, element, server, data) {
     assessmentLookupDictionary[peerAssessmentView.getID()] = peerAssessmentView;
     assessmentLookupDictionary[selfAssessmentView.getID()] = selfAssessmentView;
 
-    this.settingsView = new OpenAssessment.EditSettingsView(
-        $('#oa_basic_settings_editor', this.element).get(0), assessmentLookupDictionary, data
+    this.assessmentsStepsView = new OpenAssessment.EditAssessmentsStepsView(
+        $('#oa_assessment_steps_editor_wrapper', this.element).get(0), assessmentLookupDictionary
     );
 
-    // Initialize the rubric tab view
-    this.rubricView = new OpenAssessment.EditRubricView(
-        $('#oa_rubric_editor_wrapper', this.element).get(0),
-        new OpenAssessment.Notifier([
-            studentTrainingListener,
-        ])
+    this.settingsView = new OpenAssessment.EditSettingsView(
+        $('#oa_basic_settings_editor', this.element).get(0), assessmentLookupDictionary, data
     );
 
     // Install the save and cancel buttons
@@ -204,14 +208,14 @@ OpenAssessment.StudioView.prototype = {
             title: view.settingsView.displayName(),
             submissionStart: view.scheduleView.submissionStart(),
             submissionDue: view.scheduleView.submissionDue(),
-            assessments: view.settingsView.assessmentsDescription(),
+            assessments: view.assessmentsStepsView.assessmentsDescription(),
             textResponse: view.settingsView.textResponseNecessity(),
             fileUploadResponse: view.settingsView.fileUploadResponseNecessity(),
             fileUploadType: fileUploadType !== '' ? fileUploadType : null,
             fileTypeWhiteList: view.settingsView.fileTypeWhiteList(),
             latexEnabled: view.settingsView.latexEnabled(),
             leaderboardNum: view.settingsView.leaderboardNum(),
-            editorAssessmentsOrder: view.settingsView.editorAssessmentsOrder(),
+            editorAssessmentsOrder: view.assessmentsStepsView.editorAssessmentsOrder(),
             teamsEnabled: view.settingsView.teamsEnabled(),
             selectedTeamsetId: view.settingsView.teamset(),
         }).done(
@@ -252,9 +256,11 @@ OpenAssessment.StudioView.prototype = {
      **/
     validate: function() {
         var settingsValid = this.settingsView.validate();
+        var assessmentsStepsValid = this.assessmentsStepsView.validate();
+        var scheduleValid = this.scheduleView.validate();
         var rubricValid = this.rubricView.validate();
         var promptsValid = this.promptsView.validate();
-        return settingsValid && rubricValid && promptsValid;
+        return settingsValid && assessmentsStepsValid && scheduleValid && rubricValid && promptsValid;
     },
 
     /**
@@ -267,8 +273,12 @@ OpenAssessment.StudioView.prototype = {
      **/
     validationErrors: function() {
         return this.settingsView.validationErrors().concat(
-            this.rubricView.validationErrors().concat(
-                this.promptsView.validationErrors()
+            this.assessmentsStepsView.validationErrors().concat(
+                this.scheduleView.validationErrors().concat(
+                    this.rubricView.validationErrors().concat(
+                        this.promptsView.validationErrors()
+                    )
+                )
             )
         );
     },
@@ -278,6 +288,8 @@ OpenAssessment.StudioView.prototype = {
      **/
     clearValidationErrors: function() {
         this.settingsView.clearValidationErrors();
+        this.assessmentsStepsView.clearValidationErrors();
+        this.scheduleView.clearValidationErrors();
         this.rubricView.clearValidationErrors();
         this.promptsView.clearValidationErrors();
     },
