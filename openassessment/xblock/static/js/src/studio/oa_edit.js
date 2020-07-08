@@ -37,6 +37,10 @@ OpenAssessment.StudioView = function(runtime, element, server, data) {
         ])
     );
 
+    this.scheduleView = new OpenAssessment.EditScheduleView(
+        $('#oa_schedule_editor_wrapper', this.element).get(0)
+    );
+
     // Initialize the settings tab view
     var staffAssessmentView = new OpenAssessment.EditStaffAssessmentView(
         $('#oa_staff_assessment_editor', this.element).get(0)
@@ -104,7 +108,7 @@ OpenAssessment.StudioView.prototype = {
     initializeTabs: function() {
         // If this is the first editor that the user has opened, default to the prompt view.
         if (typeof(OpenAssessment.lastOpenEditingTab) === 'undefined') {
-            OpenAssessment.lastOpenEditingTab = 2;
+            OpenAssessment.lastOpenEditingTab = 0;
         }
         // Initialize JQuery UI Tabs, and activates the appropriate tab.
         $('.openassessment_editor_content_and_tabs', this.element)
@@ -198,8 +202,8 @@ OpenAssessment.StudioView.prototype = {
             feedback_default_text: view.rubricView.feedback_default_text(),
             criteria: view.rubricView.criteriaDefinition(),
             title: view.settingsView.displayName(),
-            submissionStart: view.settingsView.submissionStart(),
-            submissionDue: view.settingsView.submissionDue(),
+            submissionStart: view.scheduleView.submissionStart(),
+            submissionDue: view.scheduleView.submissionDue(),
             assessments: view.settingsView.assessmentsDescription(),
             textResponse: view.settingsView.textResponseNecessity(),
             fileUploadResponse: view.settingsView.fileUploadResponseNecessity(),
