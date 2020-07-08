@@ -870,6 +870,14 @@
     }
   }
 
+  #oa_schedule_editor_wrapper {
+    .openassessment_schedule_setting_header {
+      background-color: $edx-gray-t1;
+      @include padding(7.5px, 7.5px, 7.5px, 15px);
+      @include margin(10px, 10px, 0, 10px);
+      border-radius: 3px;
+    }
+  }
 
   hr{
     background-color: transparent;

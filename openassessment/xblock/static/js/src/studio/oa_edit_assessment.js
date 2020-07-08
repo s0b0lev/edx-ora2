@@ -8,9 +8,11 @@
  OpenAssessment.EditPeerAssessmentView
 
  **/
-OpenAssessment.EditPeerAssessmentView = function(element) {
+OpenAssessment.EditPeerAssessmentView = function(element, scheduleElement) {
     this.element = element;
     this.name = 'peer-assessment';
+    this.scheduleElement = scheduleElement;
+
     this.mustGradeField = new OpenAssessment.IntField(
         $('#peer_assessment_must_grade', this.element),
         {min: 0, max: 99}
@@ -32,13 +34,13 @@ OpenAssessment.EditPeerAssessmentView = function(element) {
 
     // Configure the date and time fields
     this.startDatetimeControl = new OpenAssessment.DatetimeControl(
-        this.element,
+        this.scheduleElement,
         '#peer_assessment_start_date',
         '#peer_assessment_start_time'
     ).install();
 
     this.dueDatetimeControl = new OpenAssessment.DatetimeControl(
-        this.element,
+        this.scheduleElement,
         '#peer_assessment_due_date',
         '#peer_assessment_due_time'
     ).install();
@@ -219,8 +221,10 @@ OpenAssessment.EditPeerAssessmentView.prototype = {
  OpenAssessment.EditSelfAssessmentView
 
  **/
-OpenAssessment.EditSelfAssessmentView = function(element) {
+OpenAssessment.EditSelfAssessmentView = function(element, scheduleElement) {
     this.element = element;
+    this.scheduleElement = scheduleElement;
+
     this.name = 'self-assessment';
 
     // Configure the toggle checkbox to enable/disable this assessment
@@ -235,13 +239,13 @@ OpenAssessment.EditSelfAssessmentView = function(element) {
 
     // Configure the date and time fields
     this.startDatetimeControl = new OpenAssessment.DatetimeControl(
-        this.element,
+        this.scheduleElement,
         '#self_assessment_start_date',
         '#self_assessment_start_time'
     ).install();
 
     this.dueDatetimeControl = new OpenAssessment.DatetimeControl(
-        this.element,
+        this.scheduleElement,
         '#self_assessment_due_date',
         '#self_assessment_due_time'
     ).install();
