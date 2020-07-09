@@ -25,8 +25,13 @@ OpenAssessment.EditPeerAssessmentView = function(element, scheduleElement) {
     // Configure the toggle checkbox to enable/disable this assessment
     new OpenAssessment.ToggleControl(
         $('#include_peer_assessment', this.element),
-        $('#peer_assessment_settings_editor', this.element),
-        $('#peer_assessment_description_closed', this.element),
+        [
+            $('#peer_assessment_settings_editor', this.element),
+            $('#peer_assessment_schedule_editor', this.scheduleElement),
+        ],
+        [
+            $('#peer_assessment_description_closed', this.element),
+        ],
         new OpenAssessment.Notifier([
             new OpenAssessment.AssessmentToggleListener(),
         ])
@@ -230,8 +235,13 @@ OpenAssessment.EditSelfAssessmentView = function(element, scheduleElement) {
     // Configure the toggle checkbox to enable/disable this assessment
     new OpenAssessment.ToggleControl(
         $('#include_self_assessment', this.element),
-        $('#self_assessment_settings_editor', this.element),
-        $('#self_assessment_description_closed', this.element),
+        [
+            $('#self_assessment_settings_editor', this.element),
+            $('#self_assessment_schedule_editor', this.scheduleElement),
+        ],
+        [
+            $('#self_assessment_description_closed', this.element),
+        ],
         new OpenAssessment.Notifier([
             new OpenAssessment.AssessmentToggleListener(),
         ])
@@ -391,8 +401,12 @@ OpenAssessment.EditStudentTrainingView = function(element) {
 
     new OpenAssessment.ToggleControl(
         $('#include_student_training', this.element),
-        $('#student_training_settings_editor', this.element),
-        $('#student_training_description_closed', this.element),
+        [
+            $('#student_training_settings_editor', this.element),
+        ],
+        [
+            $('#student_training_description_closed', this.element),
+        ],
         new OpenAssessment.Notifier([
             new OpenAssessment.AssessmentToggleListener(),
         ])
@@ -543,8 +557,12 @@ OpenAssessment.EditStaffAssessmentView = function(element) {
     // Configure the toggle checkbox to enable/disable this assessment
     new OpenAssessment.ToggleControl(
         $('#include_staff_assessment', this.element),
-        $('#staff_assessment_description', this.element),
-        $('#staff_assessment_description', this.element), // open and closed selectors are the same!
+        [
+            $('#staff_assessment_description', this.element),
+        ],
+        [
+            $('#staff_assessment_description', this.element),
+        ], // open and closed selectors are the same!
         new OpenAssessment.Notifier([
             new OpenAssessment.AssessmentToggleListener(),
         ])

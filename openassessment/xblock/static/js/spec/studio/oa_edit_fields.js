@@ -111,8 +111,8 @@ describe("OpenAssessment.ToggleControl", function() {
         notifier = new StubNotifier();
         toggleControl = new OpenAssessment.ToggleControl(
             $("#checkbox"),
-            $("#shown_section"),
-            $("#hidden_section"),
+            [$("#shown_section")],
+            [$("#hidden_section")],
             notifier
         ).install();
     });
