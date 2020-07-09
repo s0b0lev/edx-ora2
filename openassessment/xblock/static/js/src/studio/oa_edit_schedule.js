@@ -1,4 +1,6 @@
 OpenAssessment.EditScheduleView = function(element) {
+    this.element = element;
+
     // Configure the date and time fields
     this.startDatetimeControl = new OpenAssessment.DatetimeControl(
         this.element,
