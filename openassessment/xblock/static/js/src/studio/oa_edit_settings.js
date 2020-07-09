@@ -243,6 +243,16 @@ OpenAssessment.EditSettingsView.prototype = {
     },
 
     /**
+     * Check whether elements are hidden.
+     *
+     * @param {JQuery.selector} selector - The selector matching the elements to check.
+     * @return {boolean} - True if all the elements are hidden, else false.
+     */
+    isHidden: function(selector) {
+        return selector.hasClass('is--hidden') && selector.attr('aria-hidden') === 'true';
+    },
+
+    /**
      * Hide elements, including setting the aria-hidden attribute for screen readers.
      *
      * @param {JQuery.selector} selector - The selector matching the elements to hide.

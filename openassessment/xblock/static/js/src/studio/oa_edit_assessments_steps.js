@@ -55,6 +55,17 @@ OpenAssessment.EditAssessmentsStepsView.prototype = {
     },
 
     /**
+     * Hide elements, including setting the aria-hidden attribute for screen readers.
+     *
+     * @param {JQuery.selector} selector - The selector matching the elements to hide.
+     * @param {boolean} hidden - Whether to hide or show the elements.
+     */
+    setHidden: function(selector, hidden) {
+        selector.toggleClass('is--hidden', hidden);
+        selector.attr('aria-hidden', hidden ? 'true' : 'false');
+    },
+
+    /**
     Construct a list of enabled assessments and their properties.
 
 

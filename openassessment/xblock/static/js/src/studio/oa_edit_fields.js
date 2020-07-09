@@ -163,7 +163,7 @@ OpenAssessment.ToggleControl.prototype = {
         $.each(this.shownSections, function(i, section) {
             section.addClass('is--hidden');
         });
-        $.each(this.hiddenSection, function(i, section) {
+        $.each(this.hiddenSections, function(i, section) {
             section.removeClass('is--hidden');
         });
     },

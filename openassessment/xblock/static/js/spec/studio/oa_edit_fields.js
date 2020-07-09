@@ -119,8 +119,13 @@ describe("OpenAssessment.ToggleControl", function() {
 
     it("shows and hides elements", function() {
         var assertIsVisible = function(isVisible) {
-            expect(toggleControl.hiddenSection.hasClass('is--hidden')).toBe(isVisible);
-            expect(toggleControl.shownSection.hasClass('is--hidden')).toBe(!isVisible);
+            toggleControl.hiddenSections.forEach(function(section) {
+                expect(section.hasClass('is--hidden')).toBe(isVisible);
+            });
+
+            toggleControl.shownSections.forEach(function(section) {
+                expect(section.hasClass('is--hidden')).toBe(!isVisible);
+            });
         };
 
         // Initially, the section is visible (default from the fixture)
