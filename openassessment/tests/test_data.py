@@ -840,7 +840,7 @@ class TestOraAggregateDataIntegration(TransactionCacheResetTest):
                              set(data[item].keys()))
         self.assertEqual(data[ITEM_ID], {
             'total': 2, 'training': 0, 'peer': 1, 'self': 0, 'staff': 0, 'waiting': 0,
-            'done': 0, 'cancelled': 0, 'teams': 0
+            'done': 1, 'cancelled': 0, 'teams': 0
         })
         self.assertEqual(data[item_id2], {
             'total': 2, 'training': 0, 'peer': 1, 'self': 1, 'staff': 0, 'waiting': 0,
