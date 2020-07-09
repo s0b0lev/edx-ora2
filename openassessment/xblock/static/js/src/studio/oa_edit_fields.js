@@ -109,7 +109,7 @@ OpenAssessment.IntField.prototype = {
  checkboxSel (JQuery selector): The checkbox used to toggle whether sections
  are shown or hidden.
  shownSel (list of JQuery selectors): Sections to show when the checkbox is checked.
- hiddenSel (list of JQuery selectors): Section to show when the checkbox is unchecked.
+ hiddenSel (list of JQuery selectors): Sections to show when the checkbox is unchecked.
  notifier (OpenAssessment.Notifier): Receives notifications when the checkbox state changes.
 
  Sends the following notifications:

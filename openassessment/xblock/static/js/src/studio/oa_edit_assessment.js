@@ -3,7 +3,7 @@
 
  Args:
  element (DOM element): The DOM element representing this view.
-
+ scheduleElement (DOM element): The DOM element representing EditScheduleView.
  Returns:
  OpenAssessment.EditPeerAssessmentView
 

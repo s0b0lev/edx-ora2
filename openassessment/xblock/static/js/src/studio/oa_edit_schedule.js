@@ -1,3 +1,13 @@
+/**
+Editing interface for OpenAssessment schedule settings.
+
+Args:
+    element (DOM element): The DOM element representing this view.
+
+Returns:
+    OpenAssessment.EditScheduleView
+
+**/
 OpenAssessment.EditScheduleView = function(element) {
     this.element = element;
 

@@ -1,3 +1,14 @@
+/**
+Editing interface for OpenAssessment assessments steps.
+
+Args:
+    element (DOM element): The DOM element representing this view.
+    assessmentViews (object literal): Mapping of CSS IDs to view objects.
+
+Returns:
+    OpenAssessment.EditAssessmentsStepsView
+
+**/
 OpenAssessment.EditAssessmentsStepsView = function(element, assessmentViews) {
     this.assessmentsElement = $(element).siblings('#openassessment_assessment_module_settings_editors').get(0);
     this.assessmentViews = assessmentViews;
