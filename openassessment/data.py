@@ -11,7 +11,6 @@ import json
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db.models import F
-from django.utils.translation import ugettext as _
 
 from submissions import api as sub_api
 from openassessment.assessment.models import Assessment, AssessmentFeedback, AssessmentPart
