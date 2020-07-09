@@ -8,7 +8,6 @@ import json
 
 from mock import ANY, Mock, call, patch
 import pytz
-import six
 
 from django.test.utils import override_settings
 
@@ -221,7 +220,7 @@ class SubmissionTest(XBlockHandlerTestCase):
         resp = self.request(xblock, 'download_url', json.dumps(dict()), response_format='json')
 
         self.assertTrue(resp['success'])
-        self.assertEqual(six.text_type(download_url), six.text_type(resp['url']))
+        self.assertEqual(str(download_url), str(resp['url']))
 
     def _get_student_item_key(self, num, usage_id):
         key = "submissions_attachments/test_student/test_course/" + usage_id
