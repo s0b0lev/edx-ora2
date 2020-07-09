@@ -52,12 +52,22 @@ OpenAssessment.EditSettingsView = function(element, assessmentViews, data) {
             self.setHidden($(selfAssessment.element), false);
             self.setHidden($(peerAssessment.element), false);
             self.setHidden($(trainingAssessment.element), false);
+
+            if (selfAssessment.isEnabled()) {
+                self.setHidden($('#self_assessment_schedule_editor', selfAssessment.scheduleElement), false);
+            }
+            if (peerAssessment.isEnabled()) {
+                self.setHidden($('#peer_assessment_schedule_editor', peerAssessment.scheduleElement), false);
+            }
         } else {
             self.setHidden(teamsetElement, false);
 
             self.setHidden($(selfAssessment.element), true);
             self.setHidden($(peerAssessment.element), true);
             self.setHidden($(trainingAssessment.element), true);
+
+            self.setHidden($('#self_assessment_schedule_editor', selfAssessment.scheduleElement), true);
+            self.setHidden($('#peer_assessment_schedule_editor', peerAssessment.scheduleElement), true);
 
             staffAssessment.isEnabled(true);
         }
