@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-ora2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 14:07-0400\n"
+"POT-Creation-Date: 2020-07-10 13:16-0400\n"
 "PO-Revision-Date: 2014-06-04 15:41-0400\n"
 "Last-Translator: Muhammad Ayub khan <ayubkhan@edx.org>\n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
@@ -75,6 +75,22 @@ msgstr "Sävé Ⱡ'σяєм ι#"
 msgid "Cancel"
 msgstr "Çänçél Ⱡ'σяєм ιρѕυ#"
 
+#: openassessment/templates/openassessmentblock/edit/oa_edit_assessment_steps.html
+msgid ""
+"In this assignment, you can include learner training, peer assessment, self "
+"assessment, and staff assessment steps. Select the steps that you want "
+"below, and then drag them into the order you want. If you include a learner "
+"training step, it must precede all other steps. If you include a staff "
+"assessment step, it must be the final step. After you release an ORA "
+"assignment, you cannot change the type and number of assessment steps."
+msgstr ""
+"Ìn thïs ässïgnmént, ýöü çän ïnçlüdé léärnér träïnïng, péér ässéssmént, sélf "
+"ässéssmént, änd stäff ässéssmént stéps. Séléçt thé stéps thät ýöü wänt "
+"ßélöw, änd thén dräg thém ïntö thé ördér ýöü wänt. Ìf ýöü ïnçlüdé ä léärnér "
+"träïnïng stép, ït müst préçédé äll öthér stéps. Ìf ýöü ïnçlüdé ä stäff "
+"ässéssmént stép, ït müst ßé thé fïnäl stép. Àftér ýöü réléäsé än ÖRÀ "
+"ässïgnmént, ýöü çännöt çhängé thé týpé änd nümßér öf ässéssmént stéps.#"
+
 #: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
 msgid "Display Name "
 msgstr "Dïspläý Nämé  Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
@@ -84,34 +100,6 @@ msgid "The display name for this component."
 msgstr ""
 "Thé dïspläý nämé för thïs çömpönént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
 "¢σηѕє¢тєтυ#"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
-msgid "Response Start Date"
-msgstr "Réspönsé Stärt Däté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
-msgid "Response Start Time"
-msgstr "Réspönsé Stärt Tïmé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
-msgid "The date and time when learners can begin submitting responses."
-msgstr ""
-"Thé däté änd tïmé whén léärnérs çän ßégïn süßmïttïng réspönsés. Ⱡ'σяєм ιρѕυм"
-" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
-msgid "Response Due Date"
-msgstr "Réspönsé Düé Däté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
-msgid "Response Due Time"
-msgstr "Réspönsé Düé Tïmé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
-msgid "The date and time when learners can no longer submit responses."
-msgstr ""
-"Thé däté änd tïmé whén léärnérs çän nö löngér süßmït réspönsés. Ⱡ'σяєм ιρѕυм"
-" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_basic_settings_list.html
 msgid "Text Response"
@@ -301,17 +289,25 @@ msgid "Open Response Assessment"
 msgstr "Öpén Réspönsé Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢ση#"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html
-msgid "Settings"
-msgstr "Séttïngs Ⱡ'σяєм ιρѕυм ∂#"
+#: openassessment/templates/openassessmentblock/edit/oa_edit_prompt.html
+msgid "Prompt"
+msgstr "Prömpt Ⱡ'σяєм ιρѕυ#"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html
 msgid "Rubric"
 msgstr "Rüßrïç Ⱡ'σяєм ιρѕυ#"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html
-#: openassessment/templates/openassessmentblock/edit/oa_edit_prompt.html
-msgid "Prompt"
-msgstr "Prömpt Ⱡ'σяєм ιρѕυ#"
+msgid "Schedule"
+msgstr "Sçhédülé Ⱡ'σяєм ιρѕυм ∂#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html
+msgid "Assessment steps"
+msgstr "Àsséssmént stéps Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αм#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html
+msgid "Settings"
+msgstr "Séttïngs Ⱡ'σяєм ιρѕυм ∂#"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_header_and_validation.html
 msgid "Rubric Change Impacts Settings Section"
@@ -396,35 +392,41 @@ msgstr ""
 "Spéçïfý thé nümßér öf léärnérs thät éäçh réspönsé müst ßé ässésséd ßý. Välïd"
 " nümßérs äré 0 tö 99. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html
-#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment_schedule.html
+msgid "Specify start and due dates for the peer assessment step."
+msgstr ""
+"Spéçïfý stärt änd düé dätés för thé péér ässéssmént stép. Ⱡ'σяєм ιρѕυм ∂σłσя"
+" ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment_schedule.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment_schedule.html
 msgid "Start Date"
 msgstr "Stärt Däté Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html
-#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment_schedule.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment_schedule.html
 msgid "Start Time"
 msgstr "Stärt Tïmé Ⱡ'σяєм ιρѕυм ∂σłσ#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment_schedule.html
 msgid ""
 "Enter the date and time when learners can begin assessing peer responses."
 msgstr ""
 "Éntér thé däté änd tïmé whén léärnérs çän ßégïn ässéssïng péér réspönsés. "
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html
-#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment_schedule.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment_schedule.html
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_area.html
 msgid "Due Date"
 msgstr "Düé Däté Ⱡ'σяєм ιρѕυм ∂#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html
-#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment_schedule.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment_schedule.html
 msgid "Due Time"
 msgstr "Düé Tïmé Ⱡ'σяєм ιρѕυм ∂#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_peer_assessment_schedule.html
 msgid "Enter the date and time when all peer assessments must be complete."
 msgstr ""
 "Éntér thé däté änd tïmé whén äll péér ässéssménts müst ßé çömplété. Ⱡ'σяєм "
@@ -502,6 +504,34 @@ msgstr ""
 "¢ιłłυм ∂σłσяє єυ ƒυgιαт ηυłłα ραяιαтυя. єχ¢єρтєυя ѕιηт σ¢¢αє¢αт ¢υρι∂αтαт "
 "ηση ρяσι∂єηт, ѕυηт ιη ¢υłρα qυι σƒƒι¢ια ∂єѕєяυηт мσłłιт αηιм ι∂ єѕ#"
 
+#: openassessment/templates/openassessmentblock/edit/oa_edit_schedule.html
+msgid "Response Start Date"
+msgstr "Réspönsé Stärt Däté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_schedule.html
+msgid "Response Start Time"
+msgstr "Réspönsé Stärt Tïmé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт,#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_schedule.html
+msgid "The date and time when learners can begin submitting responses."
+msgstr ""
+"Thé däté änd tïmé whén léärnérs çän ßégïn süßmïttïng réspönsés. Ⱡ'σяєм ιρѕυм"
+" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_schedule.html
+msgid "Response Due Date"
+msgstr "Réspönsé Düé Däté Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_schedule.html
+msgid "Response Due Time"
+msgstr "Réspönsé Düé Tïmé Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмє#"
+
+#: openassessment/templates/openassessmentblock/edit/oa_edit_schedule.html
+msgid "The date and time when learners can no longer submit responses."
+msgstr ""
+"Thé däté änd tïmé whén léärnérs çän nö löngér süßmït réspönsés. Ⱡ'σяєм ιρѕυм"
+" ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α#"
+
 #: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
 msgid "Step: Self Assessment"
 msgstr "Stép: Sélf Àsséssmént Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, #"
@@ -513,40 +543,24 @@ msgstr ""
 "Léärnérs ässéss théïr öwn réspönsés üsïng thé rüßrïç för thé ässïgnmént. "
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment_schedule.html
 msgid "Specify start and due dates for the self assessment step."
 msgstr ""
 "Spéçïfý stärt änd düé dätés för thé sélf ässéssmént stép. Ⱡ'σяєм ιρѕυм ∂σłσя"
 " ѕιт αмєт, ¢σηѕє¢тєтυя α#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment_schedule.html
 msgid ""
 "Enter the date and time when learners can begin assessing their responses."
 msgstr ""
 "Éntér thé däté änd tïmé whén léärnérs çän ßégïn ässéssïng théïr réspönsés. "
 "Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυ#"
 
-#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment.html
+#: openassessment/templates/openassessmentblock/edit/oa_edit_self_assessment_schedule.html
 msgid "Enter the date and time when all self assessments must be complete."
 msgstr ""
 "Éntér thé däté änd tïmé whén äll sélf ässéssménts müst ßé çömplété. Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя #"
-
-#: openassessment/templates/openassessmentblock/edit/oa_edit_settings.html
-msgid ""
-"In this assignment, you can include learner training, peer assessment, self "
-"assessment, and staff assessment steps. Select the steps that you want "
-"below, and then drag them into the order you want. If you include a learner "
-"training step, it must precede all other steps. If you include a staff "
-"assessment step, it must be the final step. After you release an ORA "
-"assignment, you cannot change the type and number of assessment steps."
-msgstr ""
-"Ìn thïs ässïgnmént, ýöü çän ïnçlüdé léärnér träïnïng, péér ässéssmént, sélf "
-"ässéssmént, änd stäff ässéssmént stéps. Séléçt thé stéps thät ýöü wänt "
-"ßélöw, änd thén dräg thém ïntö thé ördér ýöü wänt. Ìf ýöü ïnçlüdé ä léärnér "
-"träïnïng stép, ït müst préçédé äll öthér stéps. Ìf ýöü ïnçlüdé ä stäff "
-"ässéssmént stép, ït müst ßé thé fïnäl stép. Àftér ýöü réléäsé än ÖRÀ "
-"ässïgnmént, ýöü çännöt çhängé thé týpé änd nümßér öf ässéssmént stéps.#"
 
 #: openassessment/templates/openassessmentblock/edit/oa_edit_staff_assessment.html
 msgid "Step: Staff Assessment"
