@@ -842,11 +842,12 @@ class SubmissionRenderTest(XBlockHandlerTestCase):
             xblock, 'openassessmentblock/response/oa_response.html',
             {
                 'text_response': 'required',
+                'allow_multiple_files': True,
                 'file_upload_response': 'optional',
                 'file_upload_type': 'pdf-and-image',
                 'file_urls': [
-                    ('', 'file-1', None, True),
-                    ('', 'file-2', None, True)
+                    api.FileDescriptor(download_url='', description='file-1', name=None, show_delete_button=True),
+                    api.FileDescriptor(download_url='', description='file-2', name=None, show_delete_button=True),
                 ],
                 'team_file_urls': [],
                 'saved_response': create_submission_dict({
