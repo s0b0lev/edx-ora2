@@ -1429,7 +1429,7 @@ class TestPeerApi(CacheResetTest):
         self.assertIsNone(peer_api.get_graded_by_count("DOESNOTEXIST"))
 
         buffy_sub, buffy = self._create_student_and_submission("Buffy", "Buffy's answer")
-        xander_sub, xander = self._create_student_and_submission("Xander", "Xander's answer")
+        xander_sub, _ = self._create_student_and_submission("Xander", "Xander's answer")
 
         # buffy peer grades xander
         peer_api.get_submission_to_assess(buffy_sub['uuid'], buffy['student_id'])
@@ -1449,7 +1449,7 @@ class TestPeerApi(CacheResetTest):
 
     def test_status_details(self):
         buffy_sub, buffy = self._create_student_and_submission("Buffy", "Buffy's answer")
-        xander_sub, xander = self._create_student_and_submission("Xander", "Xander's answer")
+        xander_sub, _ = self._create_student_and_submission("Xander", "Xander's answer")
 
         # buffy peer grades xander
         peer_api.get_submission_to_assess(buffy_sub['uuid'], buffy['student_id'])
