@@ -430,7 +430,7 @@
   }
 
   .openassessment_assessment_module_settings_editor{
-    @include padding(0, 15px, 0, 0);
+    @include padding(0, 15px, 10px, 0);
     margin: 10px;
     border: 1px solid $edx-gray-l3;
     @include border-radius(3px);
@@ -461,7 +461,16 @@
       font-size: 75%;
       margin: 0;
     }
+    .openassessment_view_details {
+      @include padding(5px, 15px, 0, 15px);
+      font-size: 75%;
+      margin: 0;
 
+      a {
+        color: #009fe6;
+        border-bottom: 1px dotted;
+      }
+    }  
   }
 
   .openassessment_assessment_module_settings_editor.ui-sortable-helper{
@@ -484,20 +493,16 @@
   }
 
   .openassessment_inclusion_wrapper{
-    background-color: $edx-gray-t1;
     margin: 0;
-    @include padding(7px, 5px, 7px, 13px);
+    @include padding(15px, 5px, 5px, 8px);
     @include border-top-left-radius(2px);
     @include border-top-right-radius(2px);
 
     label{
+      font-size: 19px;
       cursor: pointer;
-      @include margin-left(($baseline-h/4));
+      @include margin-left(($baseline-h/2));
     }
-  }
-
-  .openassessment_inclusion_wrapper:hover{
-    background-color: $edx-gray-t2;
   }
 
   label{

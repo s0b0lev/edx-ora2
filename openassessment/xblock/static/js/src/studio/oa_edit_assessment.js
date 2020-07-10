@@ -29,12 +29,15 @@ OpenAssessment.EditPeerAssessmentView = function(element, scheduleElement) {
             $('#peer_assessment_settings_editor', this.element),
             $('#peer_assessment_schedule_editor', this.scheduleElement),
         ],
-        [
-            $('#peer_assessment_description_closed', this.element),
-        ],
+        [],
         new OpenAssessment.Notifier([
             new OpenAssessment.AssessmentToggleListener(),
         ])
+    ).install();
+
+    new OpenAssessment.ShowControl(
+        $('#peer_assessment_settings_editor_show_details', this.element),
+        $('#peer_assessment_settings_editor_details', this.element)
     ).install();
 
     // Configure the date and time fields
@@ -404,12 +407,15 @@ OpenAssessment.EditStudentTrainingView = function(element) {
         [
             $('#student_training_settings_editor', this.element),
         ],
-        [
-            $('#student_training_description_closed', this.element),
-        ],
+        [],
         new OpenAssessment.Notifier([
             new OpenAssessment.AssessmentToggleListener(),
         ])
+    ).install();
+
+    new OpenAssessment.ShowControl(
+        $('#student_training_settings_editor_show_details', this.element),
+        $('#student_training_settings_editor_details', this.element)
     ).install();
 
     this.exampleContainer = new OpenAssessment.Container(
