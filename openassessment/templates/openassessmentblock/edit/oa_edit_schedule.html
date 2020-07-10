@@ -32,6 +32,11 @@
             </div>
             <p class="setting-help">{% trans "The date and time when learners can begin submitting responses." %}</p>
         </li>
+
+        {% include "openassessmentblock/edit/oa_edit_peer_assessment_schedule.html" %}
+
+        {% include "openassessmentblock/edit/oa_edit_self_assessment_schedule.html" %}
+
         <li class="openassessment_date_editor field comp-setting-entry">
             <div class="wrapper-comp-setting">
                 <label
@@ -62,10 +67,5 @@
             <p class="setting-help">{% trans "The date and time when learners can no longer submit responses." %}</p>
         </li>
     </ul>
-
-    {% include "openassessmentblock/edit/oa_edit_peer_assessment_schedule.html" %}
-
-    {% include "openassessmentblock/edit/oa_edit_self_assessment_schedule.html" %}
-
 </div>
 {% endspaceless %}
