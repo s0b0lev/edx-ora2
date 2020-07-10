@@ -159,7 +159,7 @@ class StudioMixin:
                 make_django_template_key(asmnt)
                 for asmnt in self.editor_assessments_order
             ],
-            'teams_feature_enabled': True,
+            'teams_feature_enabled': self.team_submissions_enabled,
             'teams_enabled': self.teams_enabled,
             'base_asset_url': self._get_base_url_path_for_course_assets(course_id),
             'is_released': self.is_released(),
