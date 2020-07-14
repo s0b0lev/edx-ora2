@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-ora2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 20:48-0400\n"
+"POT-Creation-Date: 2020-07-13 23:33-0400\n"
 "PO-Revision-Date: 2014-06-04 15:41-0400\n"
 "Last-Translator: Muhammad Ayub khan <ayubkhan@edx.org>\n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
@@ -77,60 +77,60 @@ msgstr ""
 msgid "Submission ID"
 msgstr ""
 
-#: openassessment/data.py:744
+#: openassessment/data.py:747
 msgid "Anonymized Student ID"
 msgstr ""
 
-#: openassessment/data.py:775
+#: openassessment/data.py:778
 msgid "Assessment ID"
 msgstr ""
 
-#: openassessment/data.py:776
+#: openassessment/data.py:779
 msgid "Assessment Scored Date"
 msgstr ""
 
-#: openassessment/data.py:777
+#: openassessment/data.py:780
 msgid "Assessment Scored Time"
 msgstr ""
 
-#: openassessment/data.py:778
+#: openassessment/data.py:781
 msgid "Assessment Type"
 msgstr ""
 
-#: openassessment/data.py:779
+#: openassessment/data.py:782
 msgid "Anonymous Scorer Id"
 msgstr ""
 
-#: openassessment/data.py:781
+#: openassessment/data.py:784
 #: openassessment/templates/openassessmentblock/staff_area/oa_student_info_assessment_detail.html:59
 msgid "Overall Feedback"
 msgstr ""
 
-#: openassessment/data.py:782
+#: openassessment/data.py:785
 msgid "Assessment Scored At"
 msgstr ""
 
-#: openassessment/data.py:783
+#: openassessment/data.py:786
 msgid "Date/Time Final Score Given"
 msgstr ""
 
-#: openassessment/data.py:784
+#: openassessment/data.py:787
 msgid "Final Score Earned"
 msgstr ""
 
-#: openassessment/data.py:785
+#: openassessment/data.py:788
 msgid "Final Score Possible"
 msgstr ""
 
-#: openassessment/data.py:786
+#: openassessment/data.py:789
 msgid "Feedback Statements Selected"
 msgstr ""
 
-#: openassessment/data.py:787
+#: openassessment/data.py:790
 msgid "Feedback on Assessment"
 msgstr ""
 
-#: openassessment/data.py:789
+#: openassessment/data.py:792
 msgid "Response Files"
 msgstr ""
 

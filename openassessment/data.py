@@ -734,7 +734,10 @@ class OraAggregateData:
         row[_('Item ID')] = xblock_id
         row[_('Submission ID')] = submission_uuid or ''
 
-        submission = sub_api.get_submission_and_student(submission_uuid) if submission_uuid else None
+        submission = None
+        if submission_uuid:
+            submission = sub_api.get_submission_and_student(submission_uuid)
+
         if not submission:
             # If no submission, just report block Item ID.
             yield row

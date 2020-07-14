@@ -9,8 +9,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from functools import wraps
 import logging
 
-from submissions.errors import SubmissionNotFoundError
 from xblock.core import XBlock
+from submissions.errors import SubmissionNotFoundError
 from openassessment.assessment.errors import PeerAssessmentInternalError
 from openassessment.workflow.errors import AssessmentWorkflowError, AssessmentWorkflowInternalError
 from openassessment.xblock.data_conversion import create_submission_dict, list_to_conversational_format
