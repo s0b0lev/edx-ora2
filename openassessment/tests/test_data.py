@@ -16,6 +16,7 @@ from django.core.management import call_command
 from submissions import api as sub_api, team_api as team_sub_api
 import openassessment.assessment.api.peer as peer_api
 from openassessment.data import CsvWriter, OraAggregateData
+from openassessment.fileupload.backends.base import Settings as FileUploadSettings
 from openassessment.test_utils import TransactionCacheResetTest
 from openassessment.tests.factories import *  # pylint: disable=wildcard-import
 from openassessment.workflow import api as workflow_api, team_api as team_workflow_api
@@ -791,3 +792,76 @@ class TestOraAggregateDataIntegration(TransactionCacheResetTest):
         self.assertEqual(data[ITEM_ID], {'total': 2, 'peer': 2, 'staff': 0})
         self.assertEqual(data[item_id2], {'total': 1, 'peer': 1, 'staff': 0})
         self.assertEqual(data[item_id3], {'total': 1, 'peer': 1, 'staff': 0})
+
+    def test_collect_ora2_attachments(self):
+        file_name_1 = 'file_name_1.jpg'
+        file_name_2 = 'file_name_2.pdf'
+        file_name_3 = 'file_name_3.png'
+
+        file_key_1 = '{}/{}/{}'.format(STUDENT_ID, COURSE_ID, ITEM_ID)
+        file_key_2 = '{}/{}/{}/1'.format(STUDENT_ID, COURSE_ID, ITEM_ID)
+        file_key_3 = '{}/{}/{}/2'.format(STUDENT_ID, COURSE_ID, ITEM_ID)
+
+        file_description_1 = 'Some Description 1'
+        file_description_2 = 'Some Description 2'
+        file_description_3 = 'Some Description 3'
+
+        file_size_1 = 2 ** 20
+        file_size_2 = 2 ** 21
+        file_size_3 = 2 ** 22
+
+        answer = {
+            'parts': [{'text': 'First Response'}],
+            'file_keys': [
+                file_key_1,
+                file_key_2,
+                file_key_3,
+            ],
+            'files_descriptions': [file_description_1, file_description_2, file_description_3],
+            'files_names': [file_name_1, file_name_2, file_name_3],
+            'files_sizes': [file_size_1, file_size_2, file_size_3],
+        }
+
+        submission = sub_api._get_submission_model(self.submission['uuid'])  # pylint: disable=protected-access
+        submission.answer = answer
+        submission.save()
+
+        # answer for scorer submission is just a string, and `collect_ora2_attachments`
+        # raises exception because of it, so we change it to empty dict
+        scorer_submission = sub_api._get_submission_model(  # pylint: disable=protected-access
+            self.scorer_submission['uuid']
+        )
+        scorer_submission.answer = {}
+        scorer_submission.save()
+
+        attachments_data = OraAggregateData.collect_ora2_attachments(COURSE_ID)
+
+        assert len(attachments_data) == 3
+
+        assert attachments_data[0] == {
+            'block_id': ITEM_ID,
+            'student_id': STUDENT_ID,
+            'key': file_key_1,
+            'name': file_name_1,
+            'storage_path': os.path.join(FileUploadSettings.get_prefix(), file_key_1.replace('/', '_')),
+            'description': file_description_1,
+            'size': file_size_1,
+        }
+        assert attachments_data[1] == {
+            'block_id': ITEM_ID,
+            'student_id': STUDENT_ID,
+            'key': file_key_2,
+            'name': file_name_2,
+            'storage_path': os.path.join(FileUploadSettings.get_prefix(), file_key_2.replace('/', '_')),
+            'description': file_description_2,
+            'size': file_size_2,
+        }
+        assert attachments_data[2] == {
+            'block_id': ITEM_ID,
+            'student_id': STUDENT_ID,
+            'key': file_key_3,
+            'name': file_name_3,
+            'storage_path': os.path.join(FileUploadSettings.get_prefix(), file_key_3.replace('/', '_')),
+            'description': file_description_3,
+            'size': file_size_3,
+        }

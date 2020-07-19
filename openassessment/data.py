@@ -673,7 +673,6 @@ class OraAggregateData:
 
         return result
 
-
     @classmethod
     def collect_ora2_attachments(cls, course_id):
         """
