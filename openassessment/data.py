@@ -6,6 +6,7 @@ Aggregate data for openassessment.
 from collections import defaultdict
 import csv
 import json
+import os
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
@@ -13,6 +14,7 @@ from django.db.models import F
 
 from submissions import api as sub_api
 from openassessment.assessment.models import Assessment, AssessmentFeedback, AssessmentPart
+from openassessment.fileupload.backends.base import Settings as FileUploadSettings
 from openassessment.workflow.models import AssessmentWorkflow, TeamAssessmentWorkflow
 
 
@@ -668,5 +670,33 @@ class OraAggregateData:
             result[item_id]['total'] = result[item_id].get('total', 0) + 1
             if status in statuses:
                 result[item_id][status] += 1
+
+        return result
+
+
+    @classmethod
+    def collect_ora2_attachments(cls, course_id):
+        """
+        Collects information about submission attachments in form
+        of list of dictionaries with attachment metadata.
+        """
+
+        all_submission_information = list(sub_api.get_all_course_submission_information(course_id, 'openassessment'))
+
+        result = []
+
+        for student_info, submission, _ in all_submission_information:
+            answer = submission['answer']
+
+            for index, file_key in enumerate(answer.get('file_keys', [])):
+                result.append({
+                    'block_id': student_info['item_id'],
+                    'student_id': student_info['student_id'],
+                    'key': file_key,
+                    'name': answer['files_names'][index],
+                    'storage_path': os.path.join(FileUploadSettings.get_prefix(), file_key.replace('/', '_')),
+                    'description': answer['files_descriptions'][index],
+                    'size': answer['files_sizes'][index],
+                })
 
         return result
